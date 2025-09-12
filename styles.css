@@ -298,31 +298,55 @@ img {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 16px; /* Reduce container padding on smaller screens */
+  }
   .section {
-    padding: 40px 0; /* Reduce vertical padding for sections on mobile */
+    padding: 30px 0; /* Further reduce vertical padding for sections on mobile */
+  }
+  .section__title {
+    font-size: 28px; /* Reduce title font size */
+  }
+  .section__intro {
+    margin-bottom: 20px; /* Adjust intro text spacing */
   }
   .form__group {
-    margin-bottom: 8px; /* Further reduce spacing for form groups */
+    margin-bottom: 6px; /* Even further reduce spacing for form groups */
   }
   .form__label {
     margin-bottom: 2px; /* Further reduce label spacing */
-    font-size: 14px;
+    font-size: 13px;
   }
   .form__input {
-    padding: 8px 10px; /* Reduce input padding */
-    font-size: 15px;
+    padding: 7px 9px; /* Reduce input padding */
+    font-size: 14px;
   }
   .form__checkbox {
-    margin-right: 6px;
+    margin-right: 5px;
   }
   .form__error {
-    margin-top: 2px; /* Adjust error message spacing */
-    min-height: 14px;
-    font-size: 12px;
+    margin-top: 2px;
+    min-height: 12px;
+    font-size: 11px;
   }
   .btn {
-    padding: 10px 18px;
-    font-size: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .hero__title {
+    font-size: clamp(28px, 8vw, 48px); /* Adjust hero title for smaller screens */
+  }
+  .hero__subtitle {
+    font-size: clamp(14px, 3.5vw, 18px); /* Adjust hero subtitle for smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .contact__line {
+    margin: 0 0 8px;
+  }
+  .map {
+    height: 250px; /* Reduce map height on mobile */
   }
 }
 
