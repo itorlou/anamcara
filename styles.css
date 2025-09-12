@@ -278,6 +278,12 @@ img {
   box-shadow: 0 0 0 3px rgba(199, 160, 99, 0.25);
 }
 
+.form__checkbox {
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 .form__error {
   display: block;
   color: #ffb4b4;

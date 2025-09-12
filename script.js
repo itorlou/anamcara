@@ -53,19 +53,52 @@
   if (!form || !success) return;
 
   const nombre = document.getElementById('nombre');
-  const telefono = document.getElementById('telefono');
   const servicio = document.getElementById('servicio');
   const fecha = document.getElementById('fecha');
+  const hora = document.getElementById('hora');
+  const domicilio = document.getElementById('domicilio');
   const errorNombre = document.getElementById('error-nombre');
-  const errorTelefono = document.getElementById('error-telefono');
   const errorServicio = document.getElementById('error-servicio');
   const errorFecha = document.getElementById('error-fecha');
+  const errorHora = document.getElementById('error-hora');
+
+  // Set min date for the date input to today
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = (today.getMonth() + 1).toString().padStart(2, '0');
+  const day = today.getDate().toString().padStart(2, '0');
+  fecha.min = `${year}-${month}-${day}`;
+
+  const allServices = Array.from(servicio.options).map(option => ({ value: option.value, text: option.textContent }));
+
+  function updateServiceOptions() {
+    const selectedService = servicio.value;
+    servicio.innerHTML = ''; // Clear current options
+    allServices.forEach(service => {
+      if (domicilio.checked && service.value === 'Presoterapia') {
+        return; // Skip Presoterapia if domicilio is checked
+      }
+      const option = document.createElement('option');
+      option.value = service.value;
+      option.textContent = service.text;
+      servicio.appendChild(option);
+    });
+    // Restore previously selected service if it's still available
+    if (Array.from(servicio.options).some(option => option.value === selectedService)) {
+      servicio.value = selectedService;
+    } else {
+      servicio.value = ""; // Reset if the selected service is no longer available
+    }
+  }
+
+  domicilio.addEventListener('change', updateServiceOptions);
+  updateServiceOptions(); // Initial call to set options based on initial checkbox state
 
   function clearErrors() {
     errorNombre.textContent = '';
-    errorTelefono.textContent = '';
     errorServicio.textContent = '';
     errorFecha.textContent = '';
+    errorHora.textContent = '';
   }
 
   form.addEventListener('submit', (e) => {
@@ -77,10 +110,6 @@
       errorNombre.textContent = 'Por favor, escribe tu nombre.';
       valid = false;
     }
-    if (!telefono.value.trim()) {
-      errorTelefono.textContent = 'Por favor, introduce tu número de teléfono.';
-      valid = false;
-    }
     if (!servicio.value) {
       errorServicio.textContent = 'Selecciona un servicio.';
       valid = false;
@@ -89,15 +118,20 @@
       errorFecha.textContent = 'Elige una fecha.';
       valid = false;
     }
+    if (!hora.value) {
+      errorHora.textContent = 'Selecciona una hora.';
+      valid = false;
+    }
 
     if (!valid) return;
 
     // Construct WhatsApp message
     const whatsappPhoneNumber = '34625081739'; // Phone number without + or spaces
-    const message = encodeURIComponent(
-      `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value}. Mi nombre es ${nombre.value} y mi teléfono es ${telefono.value}.`
-    );
-    const whatsappUrl = `https://wa.me/${whatsappPhoneNumber}?text=${message}`;
+    let message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value} a las ${hora.value}. Mi nombre es ${nombre.value}.`;
+    if (domicilio.checked) {
+      message += ` El servicio es a domicilio.`;
+    }
+    const whatsappUrl = `https://wa.me/${whatsappPhoneNumber}?text=${encodeURIComponent(message)}`;
 
     // Open WhatsApp in a new tab
     window.open(whatsappUrl, '_blank');
