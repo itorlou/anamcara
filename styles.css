@@ -298,16 +298,31 @@ img {
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: 40px 0; /* Reduce vertical padding for sections on mobile */
+  }
   .form__group {
-    margin-bottom: 10px; /* Reduce spacing for mobile devices */
+    margin-bottom: 8px; /* Further reduce spacing for form groups */
   }
   .form__label {
-    margin-bottom: 4px; /* Further reduce label spacing */
+    margin-bottom: 2px; /* Further reduce label spacing */
+    font-size: 14px;
+  }
+  .form__input {
+    padding: 8px 10px; /* Reduce input padding */
+    font-size: 15px;
+  }
+  .form__checkbox {
+    margin-right: 6px;
   }
   .form__error {
-    margin-top: 4px; /* Adjust error message spacing */
-    min-height: 16px;
-    font-size: 13px;
+    margin-top: 2px; /* Adjust error message spacing */
+    min-height: 14px;
+    font-size: 12px;
+  }
+  .btn {
+    padding: 10px 18px;
+    font-size: 15px;
   }
 }
 
