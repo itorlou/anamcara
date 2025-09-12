@@ -53,14 +53,17 @@
   if (!form || !success) return;
 
   const nombre = document.getElementById('nombre');
+  const telefono = document.getElementById('telefono');
   const servicio = document.getElementById('servicio');
   const fecha = document.getElementById('fecha');
   const errorNombre = document.getElementById('error-nombre');
+  const errorTelefono = document.getElementById('error-telefono');
   const errorServicio = document.getElementById('error-servicio');
   const errorFecha = document.getElementById('error-fecha');
 
   function clearErrors() {
     errorNombre.textContent = '';
+    errorTelefono.textContent = '';
     errorServicio.textContent = '';
     errorFecha.textContent = '';
   }
@@ -72,6 +75,10 @@
 
     if (!nombre.value.trim()) {
       errorNombre.textContent = 'Por favor, escribe tu nombre.';
+      valid = false;
+    }
+    if (!telefono.value.trim()) {
+      errorTelefono.textContent = 'Por favor, introduce tu número de teléfono.';
       valid = false;
     }
     if (!servicio.value) {
@@ -86,11 +93,11 @@
     if (!valid) return;
 
     // Construct WhatsApp message
-    const phoneNumber = '34600123456'; // Phone number without + or spaces
+    const whatsappPhoneNumber = '34625081739'; // Phone number without + or spaces
     const message = encodeURIComponent(
-      `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value}. Mi nombre es ${nombre.value}.`
+      `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value}. Mi nombre es ${nombre.value} y mi teléfono es ${telefono.value}.`
     );
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    const whatsappUrl = `https://wa.me/${whatsappPhoneNumber}?text=${message}`;
 
     // Open WhatsApp in a new tab
     window.open(whatsappUrl, '_blank');
