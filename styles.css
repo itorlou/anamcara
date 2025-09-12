@@ -297,6 +297,20 @@ img {
   color: var(--color-gold);
 }
 
+@media (max-width: 768px) {
+  .form__group {
+    margin-bottom: 10px; /* Reduce spacing for mobile devices */
+  }
+  .form__label {
+    margin-bottom: 4px; /* Further reduce label spacing */
+  }
+  .form__error {
+    margin-top: 4px; /* Adjust error message spacing */
+    min-height: 16px;
+    font-size: 13px;
+  }
+}
+
 /* Contact */
 .grid--contact {
   grid-template-columns: 1fr;
