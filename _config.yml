@@ -1,0 +1,20 @@
+theme: jekyll-theme-minimal
+
+# Permite el uso de plugins específicos para GitHub Pages
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+
+# Si tu sitio está en un subdirectorio (por ejemplo, https://tu-usuario.github.io/tu-repo/)
+# establece baseurl a /tu-repo/ (con la barra final)
+# Si tu sitio está en la raíz (por ejemplo, https://tu-usuario.github.io/)
+# deja baseurl en blanco o /.
+baseurl: ""
+
+# Excluir archivos o carpetas que no deben ser copiados al sitio generado
+exclude:
+  - README.md
+  - LICENSE
+  - .git/
+  - script.js
+  - styles.css
