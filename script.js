@@ -85,9 +85,19 @@
 
     if (!valid) return;
 
-    // Simulación de envío. Aquí podrías usar fetch() hacia tu backend.
-    success.hidden = false;
+    // Construct WhatsApp message
+    const phoneNumber = '34600123456'; // Phone number without + or spaces
+    const message = encodeURIComponent(
+      `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value}. Mi nombre es ${nombre.value}.`
+    );
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+
+    // Optionally clear the form after sending WhatsApp
     form.reset();
+    success.hidden = true; // Hide success message
   });
 })();
 

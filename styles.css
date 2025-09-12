@@ -57,25 +57,27 @@ img {
 }
 
 .logo {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 12px;
+  /* gap: 12px; */
   color: var(--color-text);
   text-decoration: none;
+  width: 100%; /* Make logo container take full width of available space */
+  max-width: 250px; /* Limit max width of logo */
 }
 
 .logo__img {
-  width: 60px;
-  height: 60px;
+  width: 100%; /* Make image take full width of its container */
+  height: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
 }
 
-.logo__text {
+/* .logo__text {
   font-family: 'Lora', serif;
   font-weight: 600;
   letter-spacing: 0.5px;
-}
+} */
 
 .nav {
   position: relative;
@@ -128,6 +130,11 @@ img {
   padding: 80px 0 60px;
   background: radial-gradient(80% 80% at 50% 0%, rgba(199, 160, 99, 0.08), rgba(24, 24, 24, 0) 60%),
     linear-gradient(180deg, rgba(199, 160, 99, 0.06), rgba(24, 24, 24, 0) 40%);
+  /* Add a placeholder for banner background */
+  background-image: url('resources/banner.jpg'); /* Massage related image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero__content {
@@ -138,11 +145,12 @@ img {
   font-family: 'Lora', serif;
   font-size: clamp(32px, 5vw, 56px);
   margin: 0 0 12px;
+  color: var(--color-bg);
 }
 
 .hero__subtitle {
   font-size: clamp(16px, 2.2vw, 20px);
-  color: var(--color-muted);
+  color: var(--color-bg);
   margin: 0 0 28px;
 }
 
