@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -8,15 +10,15 @@
     <meta name="keywords" content="masajes coruña, masaje relajante coruña, maderoterapia coruña, DLM coruña, presoterapia coruña, drenaje linfático coruña, envolturas corporales coruña, tratamientos faciales coruña, tratamientos corporales coruña, centro bienestar coruña, spa coruña, belleza coruña, masajes A Coruña, maderoterapia A Coruña, drenaje linfático A Coruña, bienestar Galicia" />
     <meta name="author" content="AnamCara" />
     <link rel="canonical" href="https://www.ejemplo-anamcara.es/" />
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="{{ site.baseurl }}/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png">
 
     <!-- Open Graph / Social -->
     <meta property="og:title" content="AnamCara | Masajes en A Coruña" />
     <meta property="og:description" content="Tu oasis de paz y bienestar en A Coruña. Maderoterapia, presoterapia, drenaje linfático manual y más." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.ejemplo-anamcara.es/" />
-    <meta property="og:image" content="/assets/og-image.jpg" />
+    <meta property="og:image" content="{{ site.baseurl }}/assets/og-image.jpg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
 
     <!-- Structured Data: LocalBusiness -->
     <script type="application/ld+json">
@@ -32,7 +34,7 @@
         "@context": "https://schema.org",
         "@type": "HealthAndBeautyBusiness",
         "name": "AnamCara",
-        "image": "/assets/logo.png",
+        "image": "{{ site.baseurl }}/assets/logo.png",
         "description": "Centro de masajes y belleza en A Coruña. Maderoterapia, presoterapia, drenaje linfático manual, masajes relajantes y tratamientos faciales y corporales.",
         "address": {
           "@type": "PostalAddress",
@@ -43,7 +45,7 @@
           "addressCountry": "ES"
         },
         "telephone": "+34 xxxxx",
-        "email": "anamcaramasajes@gmail.com",
+        "email": "anamcara.masajes@gmail.com",
         "url": "https://www.ejemplo-anamcara.es/",
         "priceRange": "€€",
         "areaServed": "A Coruña, Galicia"
@@ -55,7 +57,7 @@
       <div class="container header__inner">
         <a href="#top" class="logo" aria-label="AnamCara - Inicio">
           <!-- Reemplaza resources/logo.png con tu logo real -->
-          <img src="resources/logo.png" alt="Logotipo AnamCara" class="logo__img" />
+          <img src="{{ site.baseurl }}/resources/logo.png" alt="Logotipo AnamCara" class="logo__img" />
           
         </a>
         <nav class="nav" aria-label="Navegación principal">
@@ -204,11 +206,11 @@
             <div class="contact__details">
               <p class="contact__line"><strong>Dirección:</strong> Nos vemos en Attacus Nails Concept Spa, Av. de Oza, 45, Bajo Derecha, 15006 A Coruña</p>
               <p class="contact__line"><strong>Tel.:</strong> <a href="tel:+34xxxxx" class="link">+34 xxxxx</a></p>
-              <p class="contact__line"><strong>Email:</strong> <a href="mailto:anamcara.masajes@gmail.com" class="link">anamcaramasajes@gmail.com</a></p>
+              <p class="contact__line"><strong>Email:</strong> <a href="mailto:anamcara.masajes@gmail.com" class="link">anamcara.masajes@gmail.com</a></p>
               <p class="contact__note">Atendemos con cita previa para ofrecerte una experiencia tranquila y personalizada.</p>
             </div>
             <div class="map__wrap">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d181.31796374953015!2d-8.396636713296171!3d43.35428196036987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e7dcebb867e27%3A0xc693a54c000c4eb7!2sAttacus%20Nails%20Concept%20Spa!5e0!3m2!1ses!2ses!4v1757676637008!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe title="Mapa de A Coruña" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d181.31796374953015!2d-8.396636713296171!3d43.35428196036987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e7dcebb867e27%3A0xc693a54c000c4eb7!2sAttacus%20Nails%20Concept%20Spa!5e0!3m2!1ses!2ses!4v1757676637008!5m2!1ses!2ses" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -223,7 +225,7 @@
       </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="{{ site.baseurl }}/script.js"></script>
   </body>
 </html>
 
