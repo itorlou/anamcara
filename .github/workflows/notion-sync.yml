@@ -34,23 +34,30 @@ jobs:
             const { Client } = require("@notionhq/client");
             const notion = new Client({ auth: process.env.NOTION_API_TOKEN });
             async function fetchServices() {
-              const databaseId = process.env.NOTION_DATABASE_ID;
-              const response = await notion.databases.query({
-                database_id: databaseId,
-                sorts: [
-                  {
-                    property: "Nombre del Servicio", 
-                    direction: "ascending",
-                  },
-                ],
-              });
-              const services = response.results.map(page => ({ 
-                title: page.properties["Nombre del Servicio"].title[0].plain_text, 
-                description: page.properties.Descripción.rich_text[0].plain_text, 
-                // Añade más propiedades según la estructura de tu tabla de Notion
-              }));
-              require("fs").writeFileSync('_data/services.json', JSON.stringify(services, null, 2));
-              console.log('services.json generated successfully.');
+              try {
+                const databaseId = process.env.NOTION_DATABASE_ID;
+                const response = await notion.databases.query({
+                  database_id: databaseId,
+                  sorts: [
+                    {
+                      property: "Nombre del Servicio", 
+                      direction: "ascending",
+                    },
+                  ],
+                });
+                const services = response.results.map(page => ({
+                  title: page.properties["Nombre del Servicio"].title[0].plain_text, 
+                  description: page.properties.Descripción.rich_text[0].plain_text, 
+                  // Añade más propiedades según la estructura de tu tabla de Notion
+                }));
+                require("fs").writeFileSync('_data/services.json', JSON.stringify(services, null, 2));
+                console.log('services.json generated successfully.');
+              } catch (error) {
+                console.error('Error fetching Notion data:', error);
+                // Escribir un array vacío para prevenir fallos en el despliegue
+                require("fs").writeFileSync('_data/services.json', JSON.stringify([], null, 2));
+                console.log('Generated empty services.json due to error.');
+              }
             }
             fetchServices();
           '
