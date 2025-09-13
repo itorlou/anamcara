@@ -39,15 +39,15 @@ jobs:
                 database_id: databaseId,
                 sorts: [
                   {
-                    property: "Nombre del Servicio", # Reemplaza "Nombre" con la propiedad real que quieras ordenar
+                    property: "Nombre del Servicio", 
                     direction: "ascending",
                   },
                 ],
               });
-              const services = response.results.map(page => ({
-                title: page.properties["Nombre del Servicio"].title[0].plain_text, # Asume una propiedad "Nombre del Servicio" de tipo Title
-                description: page.properties.Descripción.rich_text[0].plain_text, # Asume una propiedad "Descripción" de tipo Rich Text
-                # Añade más propiedades según la estructura de tu tabla de Notion
+              const services = response.results.map(page => ({ 
+                title: page.properties["Nombre del Servicio"].title[0].plain_text, 
+                description: page.properties.Descripción.rich_text[0].plain_text, 
+                // Añade más propiedades según la estructura de tu tabla de Notion
               }));
               require("fs").writeFileSync('_data/services.json', JSON.stringify(services, null, 2));
               console.log('services.json generated successfully.');
