@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies (optional, if you use a script)
         run: npm install axios
 
+      - name: Install Notion client
+        run: npm install @notionhq/client
+
       - name: Fetch Notion data and generate JSON
         env:
           NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
