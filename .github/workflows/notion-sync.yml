@@ -27,9 +27,6 @@ jobs:
           NOTION_DATABASE_ID: "26d99f27fb17806fb29fe696ad0e4043"
         run: |
           mkdir -p _data
-          # Este es un script de ejemplo. Necesitarás reemplazarlo con tu propia lógica
-          # para llamar a la API de Notion y formatear los datos.
-          # Ejemplo rudimentario (NO COMPLETO, necesitas adaptarlo a la estructura de tu DB):
           NODE_OPTIONS='--experimental-fetch' node -e ' 
             const { Client } = require("@notionhq/client");
             const notion = new Client({ auth: process.env.NOTION_API_TOKEN });
@@ -45,18 +42,18 @@ jobs:
                     },
                   ],
                 });
-                const services = response.results.map(page => ({
+                const services = response.results.map(page => ({ 
                   title: page.properties["Nombre del Servicio"].title[0].plain_text, 
                   description: page.properties.Descripción.rich_text[0].plain_text, 
                   // Añade más propiedades según la estructura de tu tabla de Notion
                 }));
-                require("fs").writeFileSync('_data/services.json', JSON.stringify(services, null, 2));
-                console.log('services.json generated successfully.');
+                require("fs").writeFileSync("_data/services.json", JSON.stringify(services, null, 2));
+                console.log("services.json generated successfully.");
               } catch (error) {
-                console.error('Error fetching Notion data:', error);
+                console.error("Error fetching Notion data:", error);
                 // Escribir un array vacío para prevenir fallos en el despliegue
-                require("fs").writeFileSync('_data/services.json', JSON.stringify([], null, 2));
-                console.log('Generated empty services.json due to error.');
+                require("fs").writeFileSync("_data/services.json", JSON.stringify([], null, 2));
+                console.log("Generated empty services.json due to error.");
               }
             }
             fetchServices();
