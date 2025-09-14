@@ -26,7 +26,7 @@ jobs:
           NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
           NOTION_DATABASE_ID: "26d99f27fb17806fb29fe696ad0e4043"
         run: |
-          mkdir -p _data
+          mkdir -p data
           NODE_OPTIONS='--experimental-fetch' node -e ' 
             const axios = require("axios");
             async function fetchServices() {
@@ -58,12 +58,12 @@ jobs:
                   description: page.properties.Descripción.rich_text[0].plain_text, 
                   // Añade más propiedades según la estructura de tu tabla de Notion
                 }));
-                require("fs").writeFileSync("_data/services.json", JSON.stringify(services, null, 2));
+                require("fs").writeFileSync("data/services.json", JSON.stringify(services, null, 2));
                 console.log("services.json generated successfully.");
               } catch (error) {
                 console.error("Error fetching Notion data:", error);
                 // Escribir un array vacío para prevenir fallos en el despliegue
-                require("fs").writeFileSync("_data/services.json", JSON.stringify([], null, 2));
+                require("fs").writeFileSync("data/services.json", JSON.stringify([], null, 2));
                 console.log("Generated empty services.json due to error.");
               }
             }
@@ -73,7 +73,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: notion-data
-          path: _data
+          path: data
 
   build:
     needs: sync
@@ -86,7 +86,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: notion-data
-          path: _data
+          path: data
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
