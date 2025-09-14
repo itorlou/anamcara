@@ -34,11 +34,9 @@ jobs:
             const { Client } = require("@notionhq/client");
             const notion = new Client({ auth: process.env.NOTION_API_TOKEN });
             async function fetchServices() {
-              console.log("Notion client object:", notion);
-              console.log("Notion databases object:", notion.databases);
               try {
                 const databaseId = process.env.NOTION_DATABASE_ID;
-                const response = await notion.databases.query({
+                const response = await notion.dataSources.query({
                   database_id: databaseId,
                   sorts: [
                     {
