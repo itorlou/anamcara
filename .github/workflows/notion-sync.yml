@@ -21,9 +21,6 @@ jobs:
       - name: Install dependencies (optional, if you use a script)
         run: npm install axios
 
-      - name: Install Notion client
-        run: npm install @notionhq/client@latest
-
       - name: Fetch Notion data and generate JSON
         env:
           NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
@@ -31,21 +28,32 @@ jobs:
         run: |
           mkdir -p _data
           NODE_OPTIONS='--experimental-fetch' node -e ' 
-            const { Client } = require("@notionhq/client");
-            const notion = new Client({ auth: process.env.NOTION_API_TOKEN });
+            const axios = require('axios');
             async function fetchServices() {
               try {
                 const databaseId = process.env.NOTION_DATABASE_ID;
-                const response = await notion.dataSources.query({
-                  database_id: databaseId,
-                  sorts: [
-                    {
-                      property: "Nombre del Servicio", 
-                      direction: "ascending",
+
+                // Llamada directa a la API REST de Notion usando axios
+                const response = await axios.post(
+                  `https://api.notion.com/v1/databases/${databaseId}/query`,
+                  {
+                    sorts: [
+                      {
+                        property: "Nombre del Servicio", 
+                        direction: "ascending",
+                      },
+                    ],
+                  },
+                  {
+                    headers: {
+                      Authorization: `Bearer ${process.env.NOTION_API_TOKEN}`,
+                      'Notion-Version': '2022-06-28',
+                      'Content-Type': 'application/json',
                     },
-                  ],
-                });
-                const services = response.results.map(page => ({ 
+                  }
+                );
+
+                const services = response.data.results.map(page => ({
                   title: page.properties["Nombre del Servicio"].title[0].plain_text, 
                   description: page.properties.Descripción.rich_text[0].plain_text, 
                   // Añade más propiedades según la estructura de tu tabla de Notion
