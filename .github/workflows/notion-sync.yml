@@ -22,7 +22,7 @@ jobs:
         run: npm install axios
 
       - name: Install Notion client
-        run: npm install @notionhq/client
+        run: npm install @notionhq/client@latest
 
       - name: Fetch Notion data and generate JSON
         env:
