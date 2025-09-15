@@ -4,6 +4,7 @@
   "description": "Sitio web para AnamCara - Masajes y Belleza",
   "main": "index.js",
   "scripts": {
+    "build": "jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
