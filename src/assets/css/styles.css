@@ -131,7 +131,7 @@ img {
   background: radial-gradient(80% 80% at 50% 0%, rgba(199, 160, 99, 0.08), rgba(24, 24, 24, 0) 60%),
     linear-gradient(180deg, rgba(199, 160, 99, 0.06), rgba(24, 24, 24, 0) 40%);
   /* Add a placeholder for banner background */
-  background-image: url('resources/banner.jpg'); /* Massage related image */
+  background-image: url('/assets/images/banner.jpg'); /* Massage related image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
