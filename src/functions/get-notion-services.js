@@ -58,6 +58,7 @@ exports.handler = async (event, context) => {
       return {
         title: title,
         description: description,
+        category: mappedCategory,
         // Si en el futuro necesitas la categoría o la duración en la respuesta de la API,
         // solo tendrías que descomentar estas líneas:
         // category: mappedCategory,

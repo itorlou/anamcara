@@ -79,8 +79,19 @@
         <div class="container">
           <h2 id="servicios-title" class="section__title">Nuestros Servicios</h2>
           <p class="section__intro">Descubre las experiencias diseñadas para tu bienestar.</p>
-          <div id="services-container" class="grid grid--cards">
-            <!-- Los servicios se cargarán aquí desde Notion -->
+          <div id="services-container">
+            <div class="category-section">
+              <h3 class="section__subtitle">Masajes y Cuidados</h3>
+              <div id="masajes-container" class="grid grid--cards">
+                <!-- Los servicios de Masajes se cargarán aquí -->
+              </div>
+            </div>
+            <div class="category-section">
+              <h3 class="section__subtitle">Tratamientos de Belleza</h3>
+              <div id="belleza-container" class="grid grid--cards">
+                <!-- Los servicios de Belleza se cargarán aquí -->
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -104,8 +115,10 @@
             return response.json();
           })
           .then(services => {
-            const servicesContainer = document.getElementById('services-container');
-            if (servicesContainer) {
+            const masajesContainer = document.getElementById('masajes-container');
+            const bellezaContainer = document.getElementById('belleza-container');
+
+            if (masajesContainer && bellezaContainer) {
               services.forEach(service => {
                 const card = document.createElement('article');
                 card.classList.add('card');
@@ -113,7 +126,12 @@
                   <h3 class="card__title">${service.title}</h3>
                   <p class="card__text">${service.description}</p>
                 `;
-                servicesContainer.appendChild(card);
+
+                if (service.category === 'Cuidados') {
+                  masajesContainer.appendChild(card);
+                } else if (service.category === 'BELLEZA') {
+                  bellezaContainer.appendChild(card);
+                }
               });
             }
           })
