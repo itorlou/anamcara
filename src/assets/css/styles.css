@@ -54,6 +54,11 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 14px 0;
+  transition: padding 0.3s ease; /* Transición para el padding */
+}
+
+.header.scrolled .header__inner {
+  padding: 8px 0; /* Menor padding cuando se hace scroll */
 }
 
 .logo {
@@ -71,6 +76,11 @@ img {
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+  transition: max-width 0.3s ease; /* Transición para el tamaño del logo */
+}
+
+.header.scrolled .logo__img {
+  max-width: 150px; /* Tamaño más pequeño para el logo cuando se hace scroll */
 }
 
 /* .logo__text {
@@ -274,6 +284,7 @@ img {
   border: 1px solid rgba(199, 160, 99, 0.35);
   background: rgba(255, 255, 255, 0.03);
   color: var(--color-text);
+  height: 44px; /* Altura uniforme para todos los inputs y selects */
 }
 
 /* Ensure select option text is visible */
@@ -321,7 +332,7 @@ img {
     margin-bottom: 20px; /* Adjust intro text spacing */
   }
   .form__group {
-    margin-bottom: 6px; /* Even further reduce spacing for form groups */
+    margin-bottom: 12px; /* Reducir el espacio entre grupos de formulario */
   }
   .form__label {
     margin-bottom: 2px; /* Further reduce label spacing */
@@ -330,6 +341,7 @@ img {
   .form__input {
     padding: 7px 9px; /* Reduce input padding */
     font-size: 14px;
+    height: 38px; /* Altura uniforme para inputs y selects en móvil */
   }
   .form__checkbox {
     margin-right: 5px;
