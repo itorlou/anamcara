@@ -100,9 +100,6 @@ jobs:
           source: . # Tu sitio de Jekyll está en la raíz
           destination: _site
 
-      - name: Copy services.json to _site
-        run: cp services.json _site/
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
