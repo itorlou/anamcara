@@ -4,6 +4,8 @@
 # deja baseurl en blanco o /.
 baseurl: ""
 
+source: src
+
 # Excluir archivos o carpetas que no deben ser copiados al sitio generado
 exclude:
   - README.md

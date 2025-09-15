@@ -1,7 +1,7 @@
 [build]
   command = "jekyll build"
-  publish = "."
-  functions = "netlify/functions"
+  publish = "_site"
+  functions = "src/functions"
 
 [build.environment]
   RUBY_VERSION = "3.1.2"
