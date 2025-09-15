@@ -19,6 +19,12 @@ exports.handler = async (event, context) => {
     const response = await axios.post(
       `https://api.notion.com/v1/databases/${databaseId}/query`,
       {
+        filter: {
+          property: "Estado",
+          status: {
+            equals: "Activo"
+          }
+        },
         sorts: [
           {
             property: "Nombre del Servicio",
@@ -35,11 +41,29 @@ exports.handler = async (event, context) => {
       }
     );
 
-    const services = response.data.results.map(page => ({
-      title: page.properties["Nombre del Servicio"].title[0].plain_text,
-      description: page.properties.Descripción.rich_text[0].plain_text,
-      // Añade más propiedades según la estructura de tu tabla de Notion
-    }));
+    const services = response.data.results.map(page => {
+      // Extraer todas las propiedades relevantes
+      const title = page.properties["Nombre del Servicio"].title[0].plain_text;
+      const description = page.properties.Descripción.rich_text[0].plain_text;
+      const category = page.properties.Categoría.select ? page.properties.Categoría.select.name : 'Unknown';
+      const duration = page.properties.Duración && page.properties.Duración.rich_text[0] ? page.properties.Duración.rich_text[0].plain_text : 'N/A';
+
+      // Aplicar segmentación de categoría (MASAJE -> Cuidados)
+      let mappedCategory = category;
+      if (category === 'MASAJE') {
+        mappedCategory = 'Cuidados';
+      }
+
+      // Devolver solo title y description como se ha solicitado para la API
+      return {
+        title: title,
+        description: description,
+        // Si en el futuro necesitas la categoría o la duración en la respuesta de la API,
+        // solo tendrías que descomentar estas líneas:
+        // category: mappedCategory,
+        // duration: duration,
+      };
+    });
 
     return {
       statusCode: 200,
