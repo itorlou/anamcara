@@ -47,7 +47,8 @@ exports.handler = async (event, context) => {
       const title = titleProperty && titleProperty.length > 0 ? titleProperty[0].plain_text : 'Título Desconocido';
 
       const descriptionProperty = page.properties.Descripción.rich_text;
-      const description = descriptionProperty && descriptionProperty.length > 0 ? descriptionProperty[0].plain_text : 'Descripción Desconocida';
+      const rawDescription = descriptionProperty && descriptionProperty.length > 0 ? descriptionProperty[0].plain_text : 'Descripción Desconocida';
+      const description = rawDescription.replace(/\n/g, '<br>');
 
       const category = page.properties.Categoría.select ? page.properties.Categoría.select.name : 'Unknown';
       const duration = page.properties.Duración && page.properties.Duración.rich_text && page.properties.Duración.rich_text.length > 0 ? page.properties.Duración.rich_text[0].plain_text : 'N/A';
