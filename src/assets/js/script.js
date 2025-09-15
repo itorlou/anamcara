@@ -71,10 +71,12 @@
   const fecha = document.getElementById('fecha');
   const hora = document.getElementById('hora');
   const domicilio = document.getElementById('domicilio');
+  const city = document.getElementById('city'); // Nuevo
   const errorNombre = document.getElementById('error-nombre');
   const errorServicio = document.getElementById('error-servicio');
   const errorFecha = document.getElementById('error-fecha');
   const errorHora = document.getElementById('error-hora');
+  const errorCity = document.getElementById('error-city'); // Nuevo
 
   // Set min date for the date input to today
   const today = new Date();
@@ -83,19 +85,40 @@
   const day = today.getDate().toString().padStart(2, '0');
   fecha.min = `${year}-${month}-${day}`;
 
-  const allServices = Array.from(servicio.options).map(option => ({ value: option.value, text: option.textContent }));
+  let allNotionServices = []; // Almacenará todos los servicios de Notion
 
-  function updateServiceOptions() {
+  function updateServiceOptions(filteredServices) {
     const selectedService = servicio.value;
     servicio.innerHTML = ''; // Clear current options
-    allServices.forEach(service => {
-      if (domicilio.checked && service.value === 'Presoterapia') {
-        return; // Skip Presoterapia if domicilio is checked
+    const defaultOption = document.createElement('option');
+    defaultOption.value = "";
+    defaultOption.textContent = "Selecciona un servicio";
+    servicio.appendChild(defaultOption);
+
+    filteredServices.forEach(service => {
+      // Asumo que el responsable de Coruña es nomomo1602@gmail.com
+      // Y el responsable de Madrid es iago.bernardezgomez@gmail.com
+      const isCoruna = city.value === 'coruna';
+      const isMadrid = city.value === 'madrid';
+
+      const responsibleForCoruna = 'nomomo1602@gmail.com';
+      const responsibleForMadrid = 'iago.bernardezgomez@gmail.com';
+
+      // Si es Coruña y el servicio es de nomomo, o si es Madrid y el servicio es de iago
+      const shouldDisplayService = (
+        (isCoruna && service.responsible === responsibleForCoruna) ||
+        (isMadrid && service.responsible === responsibleForMadrid)
+      );
+
+      if (shouldDisplayService) {
+        if (domicilio.checked && service.title === 'Presoterapia') {
+          return; // Skip Presoterapia if domicilio is checked
+        }
+        const option = document.createElement('option');
+        option.value = service.title; // Usar el título del servicio como valor
+        option.textContent = service.title;
+        servicio.appendChild(option);
       }
-      const option = document.createElement('option');
-      option.value = service.value;
-      option.textContent = service.text;
-      servicio.appendChild(option);
     });
     // Restore previously selected service if it's still available
     if (Array.from(servicio.options).some(option => option.value === selectedService)) {
@@ -105,14 +128,33 @@
     }
   }
 
-  domicilio.addEventListener('change', updateServiceOptions);
-  updateServiceOptions(); // Initial call to set options based on initial checkbox state
+  function filterServicesByCity() {
+    const selectedCity = city.value;
+    const responsibleForCity = selectedCity === 'coruna' ? 'nomomo1602@gmail.com' : 'iago.bernardezgomez@gmail.com';
+
+    const filteredServices = allNotionServices.filter(service => 
+      service.responsible === responsibleForCity
+    );
+    updateServiceOptions(filteredServices);
+
+    // Lógica para deshabilitar domicilio si es Madrid
+    if (selectedCity === 'madrid') {
+      domicilio.checked = false; // Desmarcar si estaba marcado
+      domicilio.disabled = true; // Deshabilitar el checkbox
+    } else {
+      domicilio.disabled = false; // Habilitar en Coruña
+    }
+  }
+
+  city.addEventListener('change', filterServicesByCity); // Nuevo listener
+  domicilio.addEventListener('change', () => updateServiceOptions(allNotionServices.filter(s => s.responsible === (city.value === 'coruna' ? 'nomomo1602@gmail.com' : 'iago.bernardezgomez@gmail.com'))));
 
   function clearErrors() {
     errorNombre.textContent = '';
     errorServicio.textContent = '';
     errorFecha.textContent = '';
     errorHora.textContent = '';
+    errorCity.textContent = ''; // Nuevo
   }
 
   form.addEventListener('submit', (e) => {
@@ -120,6 +162,10 @@
     clearErrors();
     let valid = true;
 
+    if (!city.value) { // Nueva validación
+      errorCity.textContent = 'Por favor, selecciona una ciudad.';
+      valid = false;
+    }
     if (!nombre.value.trim()) {
       errorNombre.textContent = 'Por favor, escribe tu nombre.';
       valid = false;
@@ -141,8 +187,8 @@
 
     // Construct WhatsApp message
     const whatsappPhoneNumber = '34625081739'; // Phone number without + or spaces
-    let message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value} a las ${hora.value}. Mi nombre es ${nombre.value}.`;
-    if (domicilio.checked) {
+    let message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value} a las ${hora.value} en ${city.options[city.selectedIndex].textContent}. Mi nombre es ${nombre.value}.`;
+    if (domicilio.checked && !domicilio.disabled) { // Solo añadir si no está deshabilitado
       message += ` El servicio es a domicilio.`;
     }
     const whatsappUrl = `https://wa.me/${whatsappPhoneNumber}?text=${encodeURIComponent(message)}`;
@@ -154,6 +200,21 @@
     form.reset();
     success.hidden = true; // Hide success message
   });
+
+  // Cargar servicios de Notion y luego inicializar el formulario
+  fetch('/.netlify/functions/get-notion-services')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(services => {
+      allNotionServices = services; // Guardar todos los servicios
+      filterServicesByCity(); // Inicializar el filtrado de servicios
+    })
+    .catch(error => console.error('Error loading Notion services:', error));
+
 })();
 
 // Footer year

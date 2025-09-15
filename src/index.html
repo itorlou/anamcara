@@ -115,6 +115,14 @@
           <p class="section__intro">Elige tu servicio, selecciona una fecha y confirma. Te contactaremos para ultimar detalles.</p>
           <form id="booking-form" class="form" novalidate>
             <div class="form__group">
+              <label for="city" class="form__label">Ciudad</label>
+              <select id="city" name="city" class="form__input" required>
+                <option value="coruna" selected>A Coruña</option>
+                <option value="madrid">Madrid</option>
+              </select>
+              <span class="form__error" id="error-city" aria-live="polite"></span>
+            </div>
+            <div class="form__group">
               <label for="nombre" class="form__label">Nombre</label>
               <input type="text" id="nombre" name="nombre" class="form__input" placeholder="Tu nombre" required />
               <span class="form__error" id="error-nombre" aria-live="polite"></span>
