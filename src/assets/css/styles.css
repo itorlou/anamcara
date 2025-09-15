@@ -332,7 +332,7 @@ img {
     margin-bottom: 20px; /* Adjust intro text spacing */
   }
   .form__group {
-    margin-bottom: 12px; /* Reducir el espacio entre grupos de formulario */
+    margin-bottom: 4px; /* Aún más reducción en móvil */
   }
   .form__label {
     margin-bottom: 2px; /* Further reduce label spacing */
