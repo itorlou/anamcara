@@ -90,38 +90,26 @@
       <!-- Servicios -->
       <section id="servicios" class="section" aria-labelledby="servicios-title">
         <div class="container">
-          <h2 id="servicios-title" class="section__title">Servicios</h2>
-          <p class="section__intro">Experiencias diseñadas para aliviar tensiones, mejorar la circulación y cuidar de ti con calma y dedicación.</p>
-          <div class="grid grid--cards">
-            <article class="card">
-              <h3 class="card__title">Maderoterapia</h3>
-              <p class="card__text">Técnica con utensilios de madera que ayuda a moldear la silueta, activar la circulación y mejorar la apariencia de la piel.</p>
-            </article>
-            <article class="card">
-              <h3 class="card__title">Masajes relajantes</h3>
-              <p class="card__text">Maniobras suaves y rítmicas que reducen el estrés, calman la mente y armonizan el cuerpo.</p>
-            </article>
-            <article class="card">
-              <h3 class="card__title">Presoterapia</h3>
-              <p class="card__text">Tratamiento de compresión controlada que favorece el retorno venoso y linfático, aliviando la sensación de piernas cansadas.</p>
-            </article>
-            <article class="card">
-              <h3 class="card__title">Drenaje linfático manual (DLM)</h3>
-              <p class="card__text">Técnica manual suave que estimula el sistema linfático para reducir retención de líquidos y mejorar la detoxificación.</p>
-            </article>
-            <article class="card">
-              <h3 class="card__title">Envolturas corporales</h3>
-              <p class="card__text">Rituales nutritivos con activos naturales para hidratar, reafirmar y renovar la piel.</p>
-            </article>
-            <article class="card">
-              <h3 class="card__title">Servicio a domicilio</h3>
-              <p class="card__text">Disfruta de nuestros tratamientos en la comodidad de tu hogar u oficina, con la misma calidad y profesionalidad.</p>
-            </article>
+          <h2 id="servicios-title" class="section__title">Nuestros Servicios</h2>
+          <p class="section__intro">Descubre las experiencias diseñadas para tu bienestar.</p>
+          <div id="services-container">
+            <div class="category-section">
+              <h3 class="section__subtitle">Masajes y Cuidados</h3>
+              <div id="masajes-container" class="grid grid--cards">
+                <!-- Los servicios de Masajes se cargarán aquí -->
+              </div>
+            </div>
+            <div class="category-section">
+              <h3 class="section__subtitle">Tratamientos de Belleza</h3>
+              <div id="belleza-container" class="grid grid--cards">
+                <!-- Los servicios de Belleza se cargarán aquí -->
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Tratamientos Belleza -->
+      <!-- Tratamientos Belleza (contenido estático original, pero se mantendrá para la estructura) -->
       <section id="belleza" class="section" aria-labelledby="belleza-title">
         <div class="container">
           <h2 id="belleza-title" class="section__title">Tratamientos de belleza</h2>
@@ -227,6 +215,51 @@
     </footer>
 
     <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('/.netlify/functions/get-notion-services')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(services => {
+            const masajesContainer = document.getElementById('masajes-container');
+            const bellezaContainer = document.getElementById('belleza-container');
+
+            // Mapeo de responsables a rutas de memojis
+            const memojiMap = {
+              'iago.bernardezgomez@gmail.com': '{{ site.baseurl }}/assets/images/memoji_iago.webp',
+              'nomomo1602@gmail.com': '{{ site.baseurl }}/assets/images/memoji_nomomo.webp',
+              // Añade más mapeos si tienes otros responsables
+            };
+
+            if (masajesContainer && bellezaContainer) {
+              services.forEach(service => {
+                const card = document.createElement('article');
+                card.classList.add('card');
+                
+                const memojiSrc = memojiMap[service.responsible] || ''; // Obtener la ruta del memoji o cadena vacía si no se encuentra
+                const memojiImg = memojiSrc ? `<img src="${memojiSrc}" alt="${service.responsible}" class="card__memoji">` : '';
+
+                card.innerHTML = `
+                  <h3 class="card__title">${service.title}</h3>
+                  <p class="card__text">${service.description}</p>
+                  ${memojiImg}
+                `;
+
+                if (service.category === 'Cuidados') {
+                  masajesContainer.appendChild(card);
+                } else if (service.category === 'BELLEZA') {
+                  bellezaContainer.appendChild(card);
+                }
+              });
+            }
+          })
+          .catch(error => console.error('Error loading services:', error));
+      });
+    </script>
   </body>
 </html>
 
