@@ -52,17 +52,29 @@ exports.handler = async (event, context) => {
       const category = page.properties.Categoría.select ? page.properties.Categoría.select.name : 'Unknown';
       const duration = page.properties.Duración && page.properties.Duración.rich_text && page.properties.Duración.rich_text.length > 0 ? page.properties.Duración.rich_text[0].plain_text : 'N/A';
 
+      // Extraer el responsable
+      const responsibleProperty = page.properties.Responsable.people;
+      let responsible = 'Unknown';
+      if (responsibleProperty && responsibleProperty.length > 0) {
+        const firstPerson = responsibleProperty[0];
+        if (firstPerson.person && firstPerson.person.email) {
+          responsible = firstPerson.person.email;
+        } else if (firstPerson.name) { // Fallback to name if email not available or bot
+          responsible = firstPerson.name;
+        }
+      }
+
       // Aplicar segmentación de categoría (MASAJE -> Cuidados)
       let mappedCategory = category;
       if (category === 'MASAJE') {
         mappedCategory = 'Cuidados';
       }
 
-      // Devolver solo title y description como se ha solicitado para la API
       return {
         title: title,
         description: description,
         category: mappedCategory,
+        responsible: responsible,
         // Si en el futuro necesitas la categoría o la duración en la respuesta de la API,
         // solo tendrías que descomentar estas líneas:
         // duration: duration,

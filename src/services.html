@@ -118,13 +118,25 @@
             const masajesContainer = document.getElementById('masajes-container');
             const bellezaContainer = document.getElementById('belleza-container');
 
+            // Mapeo de responsables a rutas de memojis
+            const memojiMap = {
+              'lago Bernardez': '{{ site.baseurl }}/assets/images/memoji_lago.png',
+              'nomomo1602@gmail.com': '{{ site.baseurl }}/assets/images/memoji_nomomo.png',
+              // Añade más mapeos si tienes otros responsables
+            };
+
             if (masajesContainer && bellezaContainer) {
               services.forEach(service => {
                 const card = document.createElement('article');
                 card.classList.add('card');
+                
+                const memojiSrc = memojiMap[service.responsible] || ''; // Obtener la ruta del memoji o cadena vacía si no se encuentra
+                const memojiImg = memojiSrc ? `<img src="${memojiSrc}" alt="${service.responsible}" class="card__memoji">` : '';
+
                 card.innerHTML = `
                   <h3 class="card__title">${service.title}</h3>
                   <p class="card__text">${service.description}</p>
+                  ${memojiImg}
                 `;
 
                 if (service.category === 'Cuidados') {
