@@ -218,7 +218,6 @@ img {
   width: 50px; /* Tamaño del memoji */
   height: auto;
   border-radius: 50%; /* Para hacerlo redondo si la imagen lo permite */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Split grid */
