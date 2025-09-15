@@ -198,6 +198,7 @@ img {
   padding: 22px;
   background: rgba(255, 255, 255, 0.02);
   box-shadow: var(--shadow);
+  position: relative; /* Añadido para posicionar el memoji */
 }
 
 .card__title {
@@ -208,6 +209,16 @@ img {
 .card__text {
   margin: 0;
   color: var(--color-muted);
+}
+
+.card__memoji {
+  position: absolute;
+  bottom: 10px; /* Ajusta según el padding de la tarjeta */
+  right: 10px; /* Ajusta según el padding de la tarjeta */
+  width: 50px; /* Tamaño del memoji */
+  height: auto;
+  border-radius: 50%; /* Para hacerlo redondo si la imagen lo permite */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Split grid */
