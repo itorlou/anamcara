@@ -10,3 +10,7 @@ exclude:
   - LICENSE
   - .git/
 
+# Incluir archivos o carpetas que deben ser copiados al sitio generado
+include:
+  - data/
+
