@@ -272,6 +272,13 @@ img {
   margin-bottom: 12px;
 }
 
+.form__group--toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px; /* Un poco más de espacio para el toggle */
+}
+
 .form__label {
   display: block;
   margin-bottom: 8px;
@@ -303,6 +310,160 @@ img {
   width: auto;
   margin-right: 8px;
   vertical-align: middle;
+}
+
+/* Toggle Switch Styles */
+.toggle-switch {
+  position: relative;
+  width: 140px; /* Ancho total del switch */
+  height: 40px; /* Altura del switch */
+  margin-top: 5px; /* Espacio con la label */
+  background-color: rgba(255, 255, 255, 0.05); /* Color de fondo del track */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch__checkbox {
+  display: none; /* Ocultar el checkbox nativo */
+}
+
+.toggle-switch__label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.toggle-switch__inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease; /* Transición para el movimiento */
+}
+
+.toggle-switch__inner:before, .toggle-switch__inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 40px;
+  padding: 0;
+  line-height: 40px; /* Centrar texto verticalmente */
+  font-size: 14px;
+  color: var(--color-text);
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.toggle-switch__inner:before {
+  content: "\00A0"; /* Espacio no rompible para A Coruña */
+  padding-left: 10px;
+  background-color: var(--color-gold); /* Color cuando es Coruña (activo) */
+  color: var(--color-bg);
+  border-radius: 25px 0 0 25px;
+}
+
+.toggle-switch__inner:after {
+  content: "\00A0"; /* Espacio no rompible para Madrid */
+  padding-right: 10px;
+  background-color: rgba(255, 255, 255, 0.05); /* Color cuando es Madrid (inactivo) */
+  color: var(--color-text);
+  text-align: right;
+  border-radius: 0 25px 25px 0;
+}
+
+.toggle-switch__switch {
+  display: block;
+  width: 40px; /* Tamaño del thumb */
+  height: 40px;
+  margin: 0;
+  background: var(--color-text);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100px; /* Posición inicial: a la izquierda (Coruña) */
+  border-radius: 50%;
+  transition: right 0.3s ease; /* Transición para el movimiento */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch__checkbox:checked + .toggle-switch__label .toggle-switch__inner {
+  margin-left: 0; /* Mover la pista cuando está checked (Madrid) */
+}
+
+.toggle-switch__checkbox:checked + .toggle-switch__label .toggle-switch__switch {
+  right: 0; /* Mover el thumb a la derecha cuando está checked (Madrid) */
+  background: var(--color-gold);
+}
+
+.toggle-switch__checkbox:checked + .toggle-switch__label .toggle-switch__inner:before {
+  background-color: rgba(255, 255, 255, 0.05); /* Color de fondo de Coruña cuando Madrid está activo */
+  color: var(--color-text);
+}
+
+.toggle-switch__checkbox:checked + .toggle-switch__label .toggle-switch__inner:after {
+  background-color: var(--color-gold); /* Color de fondo de Madrid cuando está activo */
+  color: var(--color-bg);
+}
+
+/* Textos Coruña/Madrid superpuestos al switch */
+.toggle-switch__text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 2; /* Para que esté por encima de la pista */
+}
+
+.toggle-switch__text--left {
+  left: 15px; /* Ajusta la posición del texto Coruña */
+  color: var(--color-bg); /* Color de texto cuando es Coruña (activo) */
+}
+
+.toggle-switch__checkbox:checked ~ .toggle-switch__text--left {
+  color: var(--color-text); /* Color de texto de Coruña cuando Madrid está activo */
+}
+
+.toggle-switch__text--right {
+  right: 15px; /* Ajusta la posición del texto Madrid */
+  color: var(--color-text); /* Color de texto cuando es Madrid (inactivo) */
+}
+
+.toggle-switch__checkbox:checked ~ .toggle-switch__text--right {
+  color: var(--color-bg); /* Color de texto de Madrid cuando está activo */
+}
+
+/* Media query para ajustes responsivos del toggle */
+@media (max-width: 768px) {
+  .toggle-switch {
+    width: 120px;
+    height: 36px;
+    border-radius: 22px;
+  }
+  .toggle-switch__inner:before, .toggle-switch__inner:after {
+    height: 36px;
+    line-height: 36px;
+    font-size: 13px;
+  }
+  .toggle-switch__switch {
+    width: 36px;
+    height: 36px;
+    right: 84px; /* Posición inicial en móvil */
+  }
+  .toggle-switch__checkbox:checked + .toggle-switch__label .toggle-switch__switch {
+    right: 0; /* Posición final en móvil */
+  }
+  .toggle-switch__text--left,
+  .toggle-switch__text--right {
+    font-size: 13px;
+  }
+  .toggle-switch__text--left {
+    left: 10px;
+  }
+  .toggle-switch__text--right {
+    right: 10px;
+  }
 }
 
 .form__error {

@@ -114,12 +114,17 @@
           <h2 id="reserva-title" class="section__title">Reserva tu momento</h2>
           <p class="section__intro">Elige tu servicio, selecciona una fecha y confirma. Te contactaremos para ultimar detalles.</p>
           <form id="booking-form" class="form" novalidate>
-            <div class="form__group">
-              <label for="city" class="form__label">Ciudad</label>
-              <select id="city" name="city" class="form__input" required>
-                <option value="coruna" selected>A Coruña</option>
-                <option value="madrid">Madrid</option>
-              </select>
+            <div class="form__group form__group--toggle">
+              <label for="city-toggle" class="form__label">Selecciona tu ciudad:</label>
+              <div class="toggle-switch">
+                <input type="checkbox" id="city-toggle" class="toggle-switch__checkbox" checked />
+                <label for="city-toggle" class="toggle-switch__label">
+                  <span class="toggle-switch__inner"></span>
+                  <span class="toggle-switch__switch"></span>
+                </label>
+                <span class="toggle-switch__text toggle-switch__text--left">A Coruña</span>
+                <span class="toggle-switch__text toggle-switch__text--right">Madrid</span>
+              </div>
               <span class="form__error" id="error-city" aria-live="polite"></span>
             </div>
             <div class="form__group">

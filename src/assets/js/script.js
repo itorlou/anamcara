@@ -71,12 +71,12 @@
   const fecha = document.getElementById('fecha');
   const hora = document.getElementById('hora');
   const domicilio = document.getElementById('domicilio');
-  const city = document.getElementById('city'); // Nuevo
+  const cityToggle = document.getElementById('city-toggle'); // Nuevo: toggle switch
   const errorNombre = document.getElementById('error-nombre');
   const errorServicio = document.getElementById('error-servicio');
   const errorFecha = document.getElementById('error-fecha');
   const errorHora = document.getElementById('error-hora');
-  const errorCity = document.getElementById('error-city'); // Nuevo
+  const errorCity = document.getElementById('error-city');
 
   // Set min date for the date input to today
   const today = new Date();
@@ -98,8 +98,9 @@
     filteredServices.forEach(service => {
       // Asumo que el responsable de Coruña es nomomo1602@gmail.com
       // Y el responsable de Madrid es iago.bernardezgomez@gmail.com
-      const isCoruna = city.value === 'coruna';
-      const isMadrid = city.value === 'madrid';
+      const selectedCity = cityToggle.checked ? 'coruna' : 'madrid'; // Coruña si checked, Madrid si no
+      const isCoruna = selectedCity === 'coruna';
+      const isMadrid = selectedCity === 'madrid';
 
       const responsibleForCoruna = 'nomomo1602@gmail.com';
       const responsibleForMadrid = 'iago.bernardezgomez@gmail.com';
@@ -129,7 +130,7 @@
   }
 
   function filterServicesByCity() {
-    const selectedCity = city.value;
+    const selectedCity = cityToggle.checked ? 'coruna' : 'madrid'; // Coruña si checked, Madrid si no
     const responsibleForCity = selectedCity === 'coruna' ? 'nomomo1602@gmail.com' : 'iago.bernardezgomez@gmail.com';
 
     const filteredServices = allNotionServices.filter(service => 
@@ -146,15 +147,15 @@
     }
   }
 
-  city.addEventListener('change', filterServicesByCity); // Nuevo listener
-  domicilio.addEventListener('change', () => updateServiceOptions(allNotionServices.filter(s => s.responsible === (city.value === 'coruna' ? 'nomomo1602@gmail.com' : 'iago.bernardezgomez@gmail.com'))));
+  cityToggle.addEventListener('change', filterServicesByCity); // Listener para el toggle switch
+  domicilio.addEventListener('change', () => updateServiceOptions(allNotionServices.filter(s => s.responsible === (cityToggle.checked ? 'nomomo1602@gmail.com' : 'iago.bernardezgomez@gmail.com'))));
 
   function clearErrors() {
     errorNombre.textContent = '';
     errorServicio.textContent = '';
     errorFecha.textContent = '';
     errorHora.textContent = '';
-    errorCity.textContent = ''; // Nuevo
+    errorCity.textContent = '';
   }
 
   form.addEventListener('submit', (e) => {
@@ -162,10 +163,8 @@
     clearErrors();
     let valid = true;
 
-    if (!city.value) { // Nueva validación
-      errorCity.textContent = 'Por favor, selecciona una ciudad.';
-      valid = false;
-    }
+    // No necesitamos validar el cityToggle directamente aquí, ya que siempre tiene un valor (checked/unchecked)
+
     if (!nombre.value.trim()) {
       errorNombre.textContent = 'Por favor, escribe tu nombre.';
       valid = false;
@@ -187,8 +186,9 @@
 
     // Construct WhatsApp message
     const whatsappPhoneNumber = '34625081739'; // Phone number without + or spaces
-    let message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value} a las ${hora.value} en ${city.options[city.selectedIndex].textContent}. Mi nombre es ${nombre.value}.`;
-    if (domicilio.checked && !domicilio.disabled) { // Solo añadir si no está deshabilitado
+    const selectedCityName = cityToggle.checked ? 'A Coruña' : 'Madrid'; // Nombre de la ciudad para el mensaje
+    let message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value} a las ${hora.value} en ${selectedCityName}. Mi nombre es ${nombre.value}.`;
+    if (domicilio.checked && !domicilio.disabled) {
       message += ` El servicio es a domicilio.`;
     }
     const whatsappUrl = `https://wa.me/${whatsappPhoneNumber}?text=${encodeURIComponent(message)}`;
