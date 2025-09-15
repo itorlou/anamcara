@@ -5,6 +5,7 @@
 baseurl: ""
 
 source: src
+destination: src/_site
 
 # Excluir archivos o carpetas que no deben ser copiados al sitio generado
 exclude:
