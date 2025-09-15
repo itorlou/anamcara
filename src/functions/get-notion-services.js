@@ -42,11 +42,15 @@ exports.handler = async (event, context) => {
     );
 
     const services = response.data.results.map(page => {
-      // Extraer todas las propiedades relevantes
-      const title = page.properties["Nombre del Servicio"].title[0].plain_text;
-      const description = page.properties.Descripción.rich_text[0].plain_text;
+      // Extraer todas las propiedades relevantes con manejo de casos donde los arrays estén vacíos
+      const titleProperty = page.properties["Nombre del Servicio"].title;
+      const title = titleProperty && titleProperty.length > 0 ? titleProperty[0].plain_text : 'Título Desconocido';
+
+      const descriptionProperty = page.properties.Descripción.rich_text;
+      const description = descriptionProperty && descriptionProperty.length > 0 ? descriptionProperty[0].plain_text : 'Descripción Desconocida';
+
       const category = page.properties.Categoría.select ? page.properties.Categoría.select.name : 'Unknown';
-      const duration = page.properties.Duración && page.properties.Duración.rich_text[0] ? page.properties.Duración.rich_text[0].plain_text : 'N/A';
+      const duration = page.properties.Duración && page.properties.Duración.rich_text && page.properties.Duración.rich_text.length > 0 ? page.properties.Duración.rich_text[0].plain_text : 'N/A';
 
       // Aplicar segmentación de categoría (MASAJE -> Cuidados)
       let mappedCategory = category;
@@ -61,7 +65,6 @@ exports.handler = async (event, context) => {
         category: mappedCategory,
         // Si en el futuro necesitas la categoría o la duración en la respuesta de la API,
         // solo tendrías que descomentar estas líneas:
-        // category: mappedCategory,
         // duration: duration,
       };
     });
