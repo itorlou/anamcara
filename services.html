@@ -94,10 +94,9 @@
       </div>
     </footer>
 
-    <script src="{{ site.baseurl }}/script.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        fetch('{{ site.baseurl }}/services.json')
+        fetch('/.netlify/functions/get-notion-services')
           .then(response => {
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
