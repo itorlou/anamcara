@@ -88,6 +88,9 @@ jobs:
           name: notion-data
           path: data
 
+      - name: Copy services.json to Jekyll root
+        run: cp data/services.json ./
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -96,6 +99,9 @@ jobs:
         with:
           source: . # Tu sitio de Jekyll está en la raíz
           destination: _site
+
+      - name: Copy services.json to _site
+        run: cp services.json _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

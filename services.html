@@ -97,7 +97,7 @@
     <script src="{{ site.baseurl }}/script.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        fetch('{{ site.baseurl }}/data/services.json')
+        fetch('{{ site.baseurl }}/services.json')
           .then(response => {
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
