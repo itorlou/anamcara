@@ -71,7 +71,7 @@
   const fecha = document.getElementById('fecha');
   const hora = document.getElementById('hora');
   const domicilio = document.getElementById('domicilio');
-  const cityToggle = document.getElementById('city-toggle'); // Nuevo: toggle switch
+  const citySelect = document.getElementById('city'); // Nuevo: selector de ciudad
   const errorNombre = document.getElementById('error-nombre');
   const errorServicio = document.getElementById('error-servicio');
   const errorFecha = document.getElementById('error-fecha');
@@ -98,7 +98,7 @@
     filteredServices.forEach(service => {
       // Asumo que el responsable de Coruña es nomomo1602@gmail.com
       // Y el responsable de Madrid es iago.bernardezgomez@gmail.com
-      const selectedCity = cityToggle.checked ? 'coruna' : 'madrid'; // Coruña si checked, Madrid si no
+      const selectedCity = citySelect.value === 'coruna' ? 'coruna' : 'madrid';
       const isCoruna = selectedCity === 'coruna';
       const isMadrid = selectedCity === 'madrid';
 
@@ -130,7 +130,7 @@
   }
 
   function filterServicesByCity() {
-    const selectedCity = cityToggle.checked ? 'coruna' : 'madrid'; // Coruña si checked, Madrid si no
+    const selectedCity = citySelect.value === 'coruna' ? 'coruna' : 'madrid';
     const responsibleForCity = selectedCity === 'coruna' ? 'nomomo1602@gmail.com' : 'iago.bernardezgomez@gmail.com';
 
     const filteredServices = allNotionServices.filter(service => 
@@ -147,8 +147,10 @@
     }
   }
 
-  cityToggle.addEventListener('change', filterServicesByCity); // Listener para el toggle switch
-  domicilio.addEventListener('change', () => updateServiceOptions(allNotionServices.filter(s => s.responsible === (cityToggle.checked ? 'nomomo1602@gmail.com' : 'iago.bernardezgomez@gmail.com'))));
+  if (citySelect) {
+    citySelect.addEventListener('change', filterServicesByCity);
+  }
+  domicilio.addEventListener('change', () => updateServiceOptions(allNotionServices.filter(s => s.responsible === (citySelect.value === 'coruna' ? 'nomomo1602@gmail.com' : 'iago.bernardezgomez@gmail.com'))));
 
   function clearErrors() {
     errorNombre.textContent = '';
@@ -186,7 +188,7 @@
 
     // Construct WhatsApp message
     const whatsappPhoneNumber = '34625081739'; // Phone number without + or spaces
-    const selectedCityName = cityToggle.checked ? 'A Coruña' : 'Madrid'; // Nombre de la ciudad para el mensaje
+    const selectedCityName = citySelect.value === 'coruna' ? 'A Coruña' : 'Madrid'; // Nombre de la ciudad para el mensaje
     let message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value} a las ${hora.value} en ${selectedCityName}. Mi nombre es ${nombre.value}.`;
     if (domicilio.checked && !domicilio.disabled) {
       message += ` El servicio es a domicilio.`;
