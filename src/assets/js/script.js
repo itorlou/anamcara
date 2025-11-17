@@ -187,7 +187,7 @@
     if (!valid) return;
 
     // Construct WhatsApp message
-    const whatsappPhoneNumber = '34625081739'; // Phone number without + or spaces
+    const whatsappPhoneNumber = '34622529042'; // Phone number without + or spaces
     const selectedCityName = citySelect.value === 'coruna' ? 'A Coruña' : 'Madrid'; // Nombre de la ciudad para el mensaje
     let message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value} a las ${hora.value} en ${selectedCityName}. Mi nombre es ${nombre.value}.`;
     if (domicilio.checked && !domicilio.disabled) {
