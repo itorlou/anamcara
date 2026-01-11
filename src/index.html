@@ -115,14 +115,6 @@
           <p class="section__intro">Elige tu servicio, selecciona una fecha y confirma. Te contactaremos para ultimar detalles.</p>
           <form id="booking-form" class="form" novalidate>
             <div class="form__group">
-              <label for="city" class="form__label">Selecciona tu ciudad</label>
-              <select id="city" name="city" class="form__input" required>
-                <option value="coruna" selected>A Coruña</option>
-                <option value="madrid">Madrid</option>
-              </select>
-              <span class="form__error" id="error-city" aria-live="polite"></span>
-            </div>
-            <div class="form__group">
               <label for="nombre" class="form__label">Nombre</label>
               <input type="text" id="nombre" name="nombre" class="form__input" placeholder="Tu nombre" required />
               <span class="form__error" id="error-nombre" aria-live="polite"></span>
@@ -149,20 +141,7 @@
               <span class="form__error" id="error-fecha" aria-live="polite"></span>
             </div>
             <div class="form__group">
-              <label for="hora" class="form__label">Hora</label>
-              <select id="hora" name="hora" class="form__input" required>
-                <option value="">Selecciona una hora</option>
-                <option>10:00</option>
-                <option>11:00</option>
-                <option>12:00</option>
-                <option>13:00</option>
-                <option>15:00</option>
-                <option>16:00</option>
-                <option>17:00</option>
-                <option>18:00</option>
-                <option>19:00</option>
-              </select>
-              <span class="form__error" id="error-hora" aria-live="polite"></span>
+              <p class="contact__note" style="margin: 0;">* La hora se acordará con nosotros</p>
             </div>
             <button type="submit" class="btn btn--gold">Confirmar reserva</button>
             <p id="booking-success" class="form__success" hidden>¡Reserva solicitada! Te redirigiremos a WhatsApp.</p>
@@ -214,25 +193,14 @@
             const masajesContainer = document.getElementById('masajes-container');
             const bellezaContainer = document.getElementById('belleza-container');
 
-            // Mapeo de responsables a rutas de memojis
-            const memojiMap = {
-              'iago.bernardezgomez@gmail.com': '{{ site.baseurl }}/assets/images/memoji_iago.webp',
-              'nomomo1602@gmail.com': '{{ site.baseurl }}/assets/images/memoji_nomomo.webp',
-              // Añade más mapeos si tienes otros responsables
-            };
-
             if (masajesContainer && bellezaContainer) {
               services.forEach(service => {
                 const card = document.createElement('article');
                 card.classList.add('card');
-                
-                const memojiSrc = memojiMap[service.responsible] || ''; // Obtener la ruta del memoji o cadena vacía si no se encuentra
-                const memojiImg = memojiSrc ? `<img src="${memojiSrc}" alt="${service.responsible}" class="card__memoji">` : '';
 
                 card.innerHTML = `
                   <h3 class="card__title">${service.title}</h3>
                   <p class="card__text">${service.description}</p>
-                  ${memojiImg}
                 `;
 
                 if (service.category === 'Cuidados') {
