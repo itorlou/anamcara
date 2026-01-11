@@ -731,7 +731,44 @@ img {
   .footer__inner {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
   }
+  
+  /* Logos de redes sociales en móvil */
+  .footer__inner a[href*="instagram"],
+  .footer__inner a[href*="facebook"],
+  .footer__inner a[href*="wa.me"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .footer__inner a[href*="instagram"] .footer__icon,
+  .footer__inner a[href*="facebook"] .footer__icon,
+  .footer__inner a[href*="wa.me"] .footer__icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  
+  .footer__inner a[href*="instagram"] .footer__text,
+  .footer__inner a[href*="facebook"] .footer__text,
+  .footer__inner a[href*="wa.me"] .footer__text {
+    display: inline-block;
+  }
+}
+
+/* Ocultar iconos en desktop */
+.footer__icon {
+  display: none;
+}
+
+.footer__text {
+  display: inline;
 }
 
 /* Responsive nav */
