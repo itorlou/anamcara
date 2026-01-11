@@ -78,44 +78,37 @@
         </div>
       </section>
 
-      <!-- Instagram -->
-      <section id="instagram" class="section" aria-labelledby="instagram-title">
+      <!-- Redes Sociales -->
+      <section id="redes-sociales" class="section" aria-labelledby="redes-title">
         <div class="container">
-          <h2 id="instagram-title" class="section__title">Síguenos en Instagram</h2>
-          <p class="section__intro">Descubre nuestro día a día y los últimos tratamientos en nuestra cuenta de Instagram.</p>
+          <h2 id="redes-title" class="section__title">Síguenos en nuestras redes</h2>
+          <p class="section__intro">Descubre nuestro día a día y los últimos tratamientos en nuestras redes sociales.</p>
           
-          <div style="text-align: center; margin: 40px 0;">
-            <a href="https://www.instagram.com/anamcara.wellness/" target="_blank" rel="noopener noreferrer" class="btn btn--gold" style="display: inline-block; margin-bottom: 32px;">
-              Ver perfil en Instagram
+          <!-- Enlaces a redes sociales -->
+          <div style="text-align: center; margin: 40px 0 48px;">
+            <a href="https://www.instagram.com/anamcara.wellness/" target="_blank" rel="noopener noreferrer" class="btn btn--gold" style="display: inline-block; margin: 0 12px 16px;">
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61586145147664" target="_blank" rel="noopener noreferrer" class="btn btn--gold" style="display: inline-block; margin: 0 12px 16px;">
+              Facebook
             </a>
           </div>
 
-          <!-- Instagram Feed Embed usando SnapWidget (gratuito y confiable) -->
-          <!-- Para obtener el código, visita: https://snapwidget.com/ -->
-          <!-- Reemplaza YOUR_WIDGET_ID con el ID que obtengas al crear el widget -->
-          <div class="instagram__embed" style="max-width: 100%; margin: 0 auto; text-align: center;">
-            <!-- SnapWidget - Descomenta y reemplaza YOUR_WIDGET_ID con tu ID -->
-            <!--
-            <script src="https://snapwidget.com/js/snapwidget.js"></script>
-            <iframe src="https://snapwidget.com/embed/YOUR_WIDGET_ID" 
-              class="snapwidget-widget" 
-              allowtransparency="true" 
-              frameborder="0" 
-              scrolling="no" 
-              style="border:none; overflow:hidden; width:100%; max-width:600px; height:600px;">
-            </iframe>
-            -->
-            
-            <!-- Alternativa: Widget básico de Instagram usando embed.js -->
-            <!-- Este widget muestra posts individuales, no el feed completo -->
-            <div style="max-width: 600px; margin: 0 auto;">
-              <blockquote class="instagram-media" 
-                data-instgrm-captioned 
-                data-instgrm-permalink="https://www.instagram.com/anamcara.wellness/" 
-                data-instgrm-version="14" 
-                style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-              </blockquote>
-              <script async src="//www.instagram.com/embed.js"></script>
+          <!-- Feed de Instagram -->
+          <div class="social-feed">
+            <h3 class="section__subtitle" style="margin-bottom: 24px;">Últimas publicaciones de Instagram</h3>
+            <div id="instagram-feed" class="social-feed__container">
+              <!-- Las publicaciones de Instagram se cargarán aquí -->
+              <div class="social-feed__loading">Cargando publicaciones de Instagram...</div>
+            </div>
+          </div>
+
+          <!-- Feed de Facebook -->
+          <div class="social-feed" style="margin-top: 64px;">
+            <h3 class="section__subtitle" style="margin-bottom: 24px;">Últimas publicaciones de Facebook</h3>
+            <div id="facebook-feed" class="social-feed__container">
+              <!-- Las publicaciones de Facebook se cargarán aquí -->
+              <div class="social-feed__loading">Cargando publicaciones de Facebook...</div>
             </div>
           </div>
         </div>
@@ -134,6 +127,87 @@
     </footer>
 
     <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+    <script>
+      // Cargar publicaciones de Instagram usando SnapWidget o servicio similar
+      // Para usar SnapWidget, descomenta y configura:
+      /*
+      document.addEventListener('DOMContentLoaded', () => {
+        const instagramFeed = document.getElementById('instagram-feed');
+        const facebookFeed = document.getElementById('facebook-feed');
+        
+        // SnapWidget para Instagram (reemplaza YOUR_WIDGET_ID)
+        if (instagramFeed) {
+          const script = document.createElement('script');
+          script.src = 'https://snapwidget.com/js/snapwidget.js';
+          document.body.appendChild(script);
+          
+          const iframe = document.createElement('iframe');
+          iframe.src = 'https://snapwidget.com/embed/YOUR_WIDGET_ID';
+          iframe.className = 'snapwidget-widget';
+          iframe.setAttribute('allowtransparency', 'true');
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('scrolling', 'no');
+          iframe.style.cssText = 'border:none; overflow:hidden; width:100%; max-width:100%;';
+          instagramFeed.innerHTML = '';
+          instagramFeed.appendChild(iframe);
+        }
+      });
+      */
+      
+      // Alternativa: Usar widgets embebidos individuales
+      document.addEventListener('DOMContentLoaded', () => {
+        // Instagram: Usar el widget oficial de Instagram embebido
+        // Nota: Esto muestra posts individuales, para el feed completo usar SnapWidget
+        const instagramFeed = document.getElementById('instagram-feed');
+        if (instagramFeed) {
+          // Cargar el script de Instagram embed
+          const script = document.createElement('script');
+          script.src = '//www.instagram.com/embed.js';
+          script.async = true;
+          document.body.appendChild(script);
+          
+          // Nota: Para mostrar múltiples posts, necesitarías los permalinks específicos
+          // o usar un servicio como SnapWidget que maneja esto automáticamente
+          instagramFeed.innerHTML = `
+            <div style="max-width: 100%; margin: 0 auto;">
+              <blockquote class="instagram-media" 
+                data-instgrm-permalink="https://www.instagram.com/anamcara.wellness/" 
+                data-instgrm-version="14" 
+                style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:100%; min-width:326px; padding:0; width:99.375%;">
+              </blockquote>
+            </div>
+          `;
+        }
+        
+        // Facebook: Usar el widget embebido de Facebook
+        const facebookFeed = document.getElementById('facebook-feed');
+        if (facebookFeed) {
+          // Cargar el script de Facebook SDK
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v18.0";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+          
+          facebookFeed.innerHTML = `
+            <div class="fb-page" 
+              data-href="https://www.facebook.com/profile.php?id=61586145147664" 
+              data-tabs="timeline" 
+              data-width="500" 
+              data-height="600" 
+              data-small-header="false" 
+              data-adapt-container-width="true" 
+              data-hide-cover="false" 
+              data-show-facepile="true"
+              style="max-width: 100%; margin: 0 auto;">
+            </div>
+          `;
+        }
+      });
+    </script>
+    <div id="fb-root"></div>
   </body>
 </html>
 
