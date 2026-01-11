@@ -559,9 +559,25 @@ img {
   color: var(--color-muted);
 }
 
+/* Social Feeds Wrapper */
+.social-feeds-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin: 40px 0;
+}
+
+@media (min-width: 900px) {
+  .social-feeds-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+}
+
 /* Social Feed */
 .social-feed {
-  margin: 40px 0;
+  width: 100%;
 }
 
 .social-feed__container {
