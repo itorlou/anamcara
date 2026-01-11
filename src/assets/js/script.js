@@ -4,6 +4,11 @@
   const headerHeight = () => (header ? header.offsetHeight : 0);
 
   function smoothScrollTo(targetId) {
+    // Si es #top, ir directamente al inicio sin offset
+    if (targetId === '#top' || targetId === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     const el = document.querySelector(targetId);
     if (!el) return;
     const y = el.getBoundingClientRect().top + window.scrollY - headerHeight() - 8;
@@ -29,11 +34,26 @@
   const header = document.querySelector('.header');
   if (!header) return;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) { // Adjust this threshold as needed
+  let ticking = false;
+  let lastScrollY = 0;
+
+  function updateHeader() {
+    const scrollY = window.scrollY;
+    // Use a threshold with hysteresis to prevent vibration
+    // Add class when scrolling down past 100px, remove when scrolling back up past 50px
+    if (scrollY > 100) {
       header.classList.add('scrolled');
-    } else {
+    } else if (scrollY < 50) {
       header.classList.remove('scrolled');
+    }
+    lastScrollY = scrollY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
     }
   });
 })();
