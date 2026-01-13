@@ -187,7 +187,7 @@
       return response.json();
     })
     .then(services => {
-      allNotionServices = services; // Guardar todos los servicios
+       allNotionServices = services; // Guardar todos los servicios
       updateServiceOptions(); // Inicializar los servicios
     })
     .catch(error => console.error('Error loading Notion services:', error));
