@@ -111,15 +111,19 @@
     defaultOption.textContent = "Selecciona un servicio";
     servicio.appendChild(defaultOption);
 
+    // Cargar todos los servicios activos del JSON de Notion
     allNotionServices.forEach(service => {
+      // Excluir Presoterapia si está marcado el servicio a domicilio
       if (domicilio.checked && service.title === 'Presoterapia') {
         return; // Skip Presoterapia if domicilio is checked
       }
+
       const option = document.createElement('option');
       option.value = service.title;
       option.textContent = service.title;
       servicio.appendChild(option);
     });
+
     // Restore previously selected service if it's still available
     if (Array.from(servicio.options).some(option => option.value === selectedService)) {
       servicio.value = selectedService;
