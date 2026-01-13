@@ -3,21 +3,21 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AnamCara | Masajes en A Coruña | Centro de Belleza en Galicia</title>
-    <meta name="description" content="AnamCara: centro de masajes y belleza en A Coruña. Maderoterapia, presoterapia, drenaje linfático manual, masajes relajantes y tratamientos faciales y corporales. Reserva tu oasis de paz." />
-    <meta name="keywords" content="masajes coruña, masaje relajante coruña, maderoterapia coruña, DLM coruña, presoterapia coruña, drenaje linfático coruña, envolturas corporales coruña, tratamientos faciales coruña, tratamientos corporales coruña, centro bienestar coruña, spa coruña, belleza coruña, masajes A Coruña, maderoterapia A Coruña, drenaje linfático A Coruña, bienestar Galicia" />
-    <meta name="author" content="AnamCara" />
-    <link rel="canonical" href="https://www.ejemplo-anamcara.es/" />
+    <title>Anam Cara Wellness – Masajes y Bienestar en A Coruña</title>
+    <meta name="description" content="Anam Cara Wellness, masajes, bienestar, A Coruña. Centro especializado en maderoterapia, presoterapia, drenaje linfático manual y tratamientos de belleza en A Coruña. Reserva tu cita." />
+    <meta name="keywords" content="anam cara coruña, anam cara wellness, masajes coruña, masaje relajante coruña, maderoterapia coruña, drenaje linfático coruña, presoterapia coruña, centro bienestar coruña, spa coruña, terapias coruña, masajes A Coruña, bienestar A Coruña" />
+    <meta name="author" content="Anam Cara Wellness" />
+    <link rel="canonical" href="https://anamcara-wellness.es/" />
     <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png" sizes="any">
     <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/favicon.png">
 
     <!-- Open Graph / Social -->
-    <meta property="og:title" content="AnamCara | Masajes en A Coruña" />
-    <meta property="og:description" content="Tu oasis de paz y bienestar en A Coruña. Maderoterapia, presoterapia, drenaje linfático manual y más." />
+    <meta property="og:title" content="Anam Cara Wellness – Masajes y Bienestar en A Coruña" />
+    <meta property="og:description" content="Anam Cara Wellness, masajes, bienestar, A Coruña. Centro especializado en terapias y tratamientos de belleza en A Coruña." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.ejemplo-anamcara.es/" />
+    <meta property="og:url" content="https://anamcara-wellness.es/" />
     <meta property="og:image" content="{{ site.baseurl }}/assets/images/banner.jpg" />
 
     <!-- Fonts -->
@@ -33,9 +33,9 @@
       {
         "@context": "https://schema.org",
         "@type": "HealthAndBeautyBusiness",
-        "name": "AnamCara",
+        "name": "Anam Cara Wellness",
         "image": "{{ site.baseurl }}/assets/images/logo.png",
-        "description": "Centro de masajes y belleza en A Coruña. Maderoterapia, presoterapia, drenaje linfático manual, masajes relajantes y tratamientos faciales y corporales.",
+        "description": "Centro de masajes y bienestar en A Coruña. Maderoterapia, presoterapia, drenaje linfático manual, masajes relajantes y tratamientos faciales y corporales.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Av. de Oza, 45, Bajo Derecha",
@@ -44,21 +44,39 @@
           "postalCode": "15006",
           "addressCountry": "ES"
         },
-        "telephone": "+34 xxxxx",
+        "telephone": "+34622529042",
         "email": "anamcara.masajes@gmail.com",
-        "url": "https://www.ejemplo-anamcara.es/",
+        "url": "https://anamcara-wellness.es/",
         "priceRange": "€€",
-        "areaServed": "A Coruña, Galicia"
+        "areaServed": {
+          "@type": "City",
+          "name": "A Coruña"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "43.35428196036987",
+          "longitude": "-8.396636713296171"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "19:00"
+        }
       }
     </script>
   </head>
   <body>
     <header class="header" id="top">
       <div class="container header__inner">
-        <a href="#top" class="logo" aria-label="AnamCara - Inicio">
-          <!-- Reemplaza resources/logo.png con tu logo real -->
-          <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logotipo AnamCara" class="logo__img" />
-          
+        <a href="#top" class="logo" aria-label="Anam Cara Wellness - Inicio">
+          <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Anam Cara Wellness - Centro de masajes y bienestar en A Coruña" class="logo__img" loading="eager" />
         </a>
         <nav class="nav" aria-label="Navegación principal">
           <button class="nav__toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menú">
@@ -70,6 +88,7 @@
             <li><a href="#servicios" class="nav__link">Servicios</a></li>
             <li><a href="#reserva" class="nav__link">Reserva</a></li>
             <li><a href="#contacto" class="nav__link">Contacto</a></li>
+            <li><a href="{{ site.baseurl }}/anam-cara-coruna.html" class="nav__link">Anam Cara Coruña</a></li>
             <li><a href="{{ site.baseurl }}/conocenos.html" class="nav__link">Conócenos</a></li>
             <li><a href="{{ site.baseurl }}/faq.html" class="nav__link">FAQ</a></li>
           </ul>
@@ -81,26 +100,39 @@
       <!-- Hero -->
       <section class="hero" aria-labelledby="hero-title">
         <div class="container hero__content">
-          <h1 id="hero-title" class="hero__title">Te damos la bienvenida a AnămCara</h1>
-          <p class="hero__subtitle">Tu oasis de paz y bienestar en A Coruña</p>
+          <h1 id="hero-title" class="hero__title">Anam Cara Wellness – Centro de bienestar en A Coruña</h1>
+          <p class="hero__subtitle">Anam Cara Wellness ofrece masajes y terapias de bienestar en A Coruña. Especialistas en maderoterapia, presoterapia, drenaje linfático manual y tratamientos faciales y corporales. Tu centro de bienestar en A Coruña para relajación y cuidado personal.</p>
           <a href="#reserva" class="btn btn--gold">Reserva ahora</a>
+        </div>
+      </section>
+
+      <!-- Introducción SEO -->
+      <section class="section" aria-labelledby="intro-title">
+        <div class="container">
+          <div class="section__intro" style="max-width: 800px; margin: 0 auto; font-size: 18px; line-height: 1.8;">
+            <p>Anam Cara Wellness es tu centro de masajes y bienestar en A Coruña. Nos especializamos en ofrecer terapias personalizadas que combinan técnicas tradicionales y modernas para tu bienestar integral. Ubicados en A Coruña, ofrecemos una amplia gama de servicios de masajes, terapias corporales y tratamientos de belleza diseñados para relajar, rejuvenecer y cuidar tu cuerpo.</p>
+            
+            <p>En Anam Cara Wellness en A Coruña encontrarás profesionales cualificados dedicados a proporcionar experiencias únicas de bienestar. Nuestros servicios incluyen maderoterapia, una técnica ancestral que utiliza herramientas de madera para modelar y tonificar; presoterapia para mejorar la circulación y reducir la retención de líquidos; drenaje linfático manual (DLM) para estimular el sistema linfático; masajes relajantes para aliviar tensiones; y tratamientos faciales y corporales para el cuidado de tu piel.</p>
+            
+            <p>Nuestro centro de bienestar en A Coruña está comprometido con la excelencia en cada sesión. Trabajamos con cita previa para garantizar una atención personalizada y un ambiente tranquilo donde puedas desconectar y dedicarte tiempo a ti mismo. Ya sea que busques alivio para dolores musculares, reducción de celulitis, relajación profunda o cuidados estéticos, en Anam Cara Wellness en A Coruña encontrarás el tratamiento perfecto para tus necesidades.</p>
+          </div>
         </div>
       </section>
 
       <!-- Servicios -->
       <section id="servicios" class="section" aria-labelledby="servicios-title">
         <div class="container">
-          <h2 id="servicios-title" class="section__title">Nuestros Servicios</h2>
-          <p class="section__intro">Descubre las experiencias diseñadas para tu bienestar.</p>
+          <h2 id="servicios-title" class="section__title">Nuestros Servicios de Bienestar en A Coruña</h2>
+          <p class="section__intro">En Anam Cara Wellness en A Coruña ofrecemos una amplia gama de terapias y tratamientos diseñados para tu bienestar físico y mental.</p>
           <div id="services-container">
             <div class="category-section">
-              <h3 class="section__subtitle">Masajes y Cuidados</h3>
+              <h3 class="section__subtitle">Masajes y Terapias Corporales</h3>
               <div id="masajes-container" class="grid grid--cards">
                 <!-- Los servicios de Masajes se cargarán aquí -->
               </div>
             </div>
             <div class="category-section">
-              <h3 class="section__subtitle">Tratamientos de Belleza</h3>
+              <h3 class="section__subtitle">Tratamientos de Belleza y Estética</h3>
               <div id="belleza-container" class="grid grid--cards">
                 <!-- Los servicios de Belleza se cargarán aquí -->
               </div>
@@ -112,8 +144,8 @@
       <!-- Reserva -->
       <section id="reserva" class="section" aria-labelledby="reserva-title">
         <div class="container">
-          <h2 id="reserva-title" class="section__title">Reserva tu momento</h2>
-          <p class="section__intro">Elige tu servicio, selecciona una fecha y confirma. Te contactaremos para ultimar detalles.</p>
+          <h2 id="reserva-title" class="section__title">Reserva tu Cita en Anam Cara Wellness</h2>
+          <p class="section__intro">Reserva tu sesión de bienestar en Anam Cara Wellness en A Coruña. Elige tu servicio, selecciona una fecha y confirma. Te contactaremos para ultimar detalles.</p>
           <form id="booking-form" class="form" novalidate>
             <div class="form__group">
               <label for="nombre" class="form__label">Nombre</label>
@@ -153,17 +185,17 @@
       <!-- Contacto -->
       <section id="contacto" class="section" aria-labelledby="contacto-title">
         <div class="container">
-          <h2 id="contacto-title" class="section__title">Contacto</h2>
+          <h2 id="contacto-title" class="section__title">Contacto en Anam Cara Wellness A Coruña</h2>
           <div class="grid grid--contact">
-            <div class="contact__details">
-              <p class="contact__line"><strong>Dirección:</strong> Nos vemos en Attacus Nails Concept Spa, Av. de Oza, 45, Bajo Derecha, 15006 A Coruña</p>
-              <p class="contact__line"><strong>Teléfono 1: </strong> <a href="tel:+34622529042" class="link">+34 622 529 042</a></p>
-              <p class="contact__line"><strong>Teléfono 2: </strong> <a href="tel:+34686886334" class="link">+34 686 886 334</a></p>
+            <address class="contact__details">
+              <p class="contact__line"><strong>Dirección:</strong> Anam Cara Wellness, Attacus Nails Concept Spa, Av. de Oza, 45, Bajo Derecha, 15006 A Coruña, Galicia, España</p>
+              <p class="contact__line"><strong>Teléfono 1:</strong> <a href="tel:+34622529042" class="link">+34 622 529 042</a></p>
+              <p class="contact__line"><strong>Teléfono 2:</strong> <a href="tel:+34686886334" class="link">+34 686 886 334</a></p>
               <p class="contact__line"><strong>Email:</strong> <a href="mailto:anamcara.masajes@gmail.com" class="link">anamcara.masajes@gmail.com</a></p>
-              <p class="contact__note">Atendemos con cita previa para ofrecerte una experiencia tranquila y personalizada.</p>
-            </div>
+              <p class="contact__note">Atendemos con cita previa para ofrecerte una experiencia tranquila y personalizada en nuestro centro de A Coruña.</p>
+            </address>
             <div class="map__wrap">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11603.792663680413!2d-8.407458102584501!3d43.357194825760004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e7b005d5bfcbf%3A0x33a177579386be6b!2sAnam%20Cara%20Wellness!5e0!3m2!1ses!2ses!4v1768156399232!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe title="Ubicación de Anam Cara Wellness en A Coruña" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11603.792663680413!2d-8.407458102584501!3d43.357194825760004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e7b005d5bfcbf%3A0x33a177579386be6b!2sAnam%20Cara%20Wellness!5e0!3m2!1ses!2ses!4v1768156399232!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
@@ -172,7 +204,6 @@
 
     <footer class="footer">
       <div class="container footer__inner">
-        <!--<p>© <span id="year"></span> AnămCara · A Coruña, Galicia</p>-->
         <a href="#top" class="link link--muted">Volver arriba</a>
         <a href="https://wa.me/34622529042" target="_blank" rel="noopener noreferrer" class="link link--muted">
           <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -238,5 +269,3 @@
     </script>
   </body>
 </html>
-
-
