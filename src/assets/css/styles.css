@@ -132,16 +132,17 @@ img {
 }
 
 /* Hero */
+/* Hero */
 .hero {
   min-height: 72vh;
   display: grid;
   place-items: center;
   text-align: center;
   padding: 80px 0 60px;
-  background: radial-gradient(80% 80% at 50% 0%, rgba(199, 160, 99, 0.08), rgba(24, 24, 24, 0) 60%),
-    linear-gradient(180deg, rgba(199, 160, 99, 0.06), rgba(24, 24, 24, 0) 40%);
-  /* Add a placeholder for banner background */
-  background-image: url('/assets/images/banner.jpg'); /* Massage related image */
+  /* Capa oscura superpuesta + imagen de fondo */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+    url('/assets/images/banner.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -155,24 +156,13 @@ img {
   font-family: 'Lora', serif;
   font-size: clamp(32px, 5vw, 56px);
   margin: 0 0 12px;
-  color: var(--color-bg);
+  color: #ffffff; /* Blanco */
 }
 
 .hero__subtitle {
   font-size: clamp(16px, 2.2vw, 20px);
-  color: var(--color-bg);
+  color: #ffffff; /* Blanco */
   margin: 0 0 28px;
-}
-
-/* Sections */
-.section {
-  padding: 72px 0;
-}
-
-.section__title {
-  font-family: 'Lora', serif;
-  font-size: clamp(24px, 3.6vw, 36px);
-  margin: 0 0 10px;
 }
 
 .section__intro {
