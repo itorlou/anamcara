@@ -4,4 +4,4 @@
   functions = "src/functions"
 
 [build.environment]
-  RUBY_VERSION = "3.1.2"
+  RUBY_VERSION = "3.3.0"
