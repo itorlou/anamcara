@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /anam-cara-coruna.html
 Sitemap: https://anamcara-wellness.es/sitemap.xml

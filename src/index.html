@@ -12,27 +12,33 @@
     <meta name="author" content="AnamCara" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#c7a063" />
-    <link rel="canonical" href="https://www.ejemplo-anamcara.es/" />
+    <link rel="canonical" href="https://anamcara-wellness.es/" />
     <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png" sizes="any">
     <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/favicon.png">
+
+    <!-- Geotags / Local SEO -->
+    <meta name="geo.region" content="ES-GA" />
+    <meta name="geo.placename" content="A Coruña" />
+    <meta name="geo.position" content="43.354303;-8.396495" />
+    <meta name="ICBM" content="43.354303, -8.396495" />
 
     <!-- Open Graph / Social -->
     <meta property="og:title" content="AnamCara | Masajes en A Coruña | Centro de Belleza en Galicia" />
     <meta property="og:description" content="AnamCara: centro de masajes y belleza en A Coruña. Maderoterapia, presoterapia, drenaje linfático manual, masajes relajantes y tratamientos faciales y corporales." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.ejemplo-anamcara.es/" />
-    <meta property="og:image" content="{{ site.baseurl }}/assets/images/banner.jpg" />
+    <meta property="og:url" content="https://anamcara-wellness.es/" />
+    <meta property="og:image" content="https://anamcara-wellness.es/assets/images/banner.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="AnamCara - Centro de masajes y belleza en A Coruña" />
-    <meta property="og:site_name" content="AnamCara" />
+    <meta property="og:site_name" content="AnamCara Wellness" />
     <meta property="og:locale" content="es_ES" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AnamCara | Masajes en A Coruña | Centro de Belleza en Galicia" />
     <meta name="twitter:description" content="AnamCara: centro de masajes y belleza en A Coruña. Maderoterapia, presoterapia, drenaje linfático manual, masajes relajantes y tratamientos faciales y corporales." />
-    <meta name="twitter:image" content="{{ site.baseurl }}/assets/images/banner.jpg" />
+    <meta name="twitter:image" content="https://anamcara-wellness.es/assets/images/banner.jpg" />
     <meta name="twitter:image:alt" content="AnamCara - Centro de masajes y belleza en A Coruña" />
 
     <!-- Fonts -->
@@ -51,15 +57,16 @@
       {
         "@context": "https://schema.org",
         "@type": "HealthAndBeautyBusiness",
-        "@id": "https://www.ejemplo-anamcara.es/#organization",
+        "@id": "https://anamcara-wellness.es/#organization",
         "name": "AnamCara Wellness",
         "alternateName": "AnamCara",
-        "url": "https://www.ejemplo-anamcara.es/",
-        "logo": "{{ site.baseurl }}/assets/images/logo.png",
-        "image": "{{ site.baseurl }}/assets/images/banner.jpg",
+        "url": "https://anamcara-wellness.es/",
+        "logo": "https://anamcara-wellness.es/assets/images/logo.png",
+        "image": "https://anamcara-wellness.es/assets/images/banner.jpg",
         "description": "Centro de masajes y belleza en A Coruña. Maderoterapia, presoterapia, drenaje linfático manual, masajes relajantes y tratamientos faciales y corporales.",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Av. de Oza, 45, Bajo Derecha",
           "addressLocality": "A Coruña",
           "addressRegion": "Galicia",
           "postalCode": "15006",
@@ -67,12 +74,26 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "43.35430319999999",
-          "longitude": "-8.396495"
+          "latitude": 43.354303,
+          "longitude": -8.396495
         },
         "telephone": "+34622529042",
         "email": "anamcara.masajes@gmail.com",
         "priceRange": "€€",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "10:00",
+            "closes": "19:00"
+          }
+        ],
         "areaServed": {
           "@type": "Place",
           "name": "A Coruña, Galicia, España"
@@ -104,6 +125,22 @@
                 "name": "Presoterapia",
                 "description": "Tratamiento que mejora la circulación y reduce la retención de líquidos"
               }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Masajes Relajantes",
+                "description": "Masajes para aliviar tensiones musculares y reducir el estrés"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tratamientos Faciales y Corporales",
+                "description": "Cuidado integral y envolturas corporales personalizadas"
+              }
             }
           ]
         },
@@ -119,9 +156,9 @@
     <header class="header" id="top">
       <div class="container header__inner">
         <a href="#top" class="logo" aria-label="AnamCara - Inicio" itemscope itemtype="https://schema.org/Organization">
-          <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logotipo AnamCara" class="logo__img" fetchpriority="high" />
+          <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logotipo AnamCara" class="logo__img" width="180" height="50" fetchpriority="high" />
           <meta itemprop="name" content="AnamCara Wellness">
-          <meta itemprop="url" content="https://www.ejemplo-anamcara.es/">
+          <meta itemprop="url" content="https://anamcara-wellness.es/">
         </a>
         <nav class="nav" aria-label="Navegación principal">
           <button class="nav__toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menú">
