@@ -86,9 +86,11 @@
   const success = document.getElementById('booking-success');
   if (!form || !success) return;
 
+  const centro = document.getElementById('centro');
   const nombre = document.getElementById('nombre');
   const servicio = document.getElementById('servicio');
   const fecha = document.getElementById('fecha');
+  const errorCentro = document.getElementById('error-centro');
   const errorNombre = document.getElementById('error-nombre');
   const errorServicio = document.getElementById('error-servicio');
   const errorFecha = document.getElementById('error-fecha');
@@ -133,6 +135,7 @@
   }
 
   function clearErrors() {
+    if (errorCentro) errorCentro.textContent = '';
     errorNombre.textContent = '';
     errorServicio.textContent = '';
     errorFecha.textContent = '';
@@ -143,8 +146,10 @@
     clearErrors();
     let valid = true;
 
-    // No necesitamos validar el cityToggle directamente aquí, ya que siempre tiene un valor (checked/unchecked)
-
+    if (!centro.value) {
+      if (errorCentro) errorCentro.textContent = 'Por favor, selecciona un centro.';
+      valid = false;
+    }
     if (!nombre.value.trim()) {
       errorNombre.textContent = 'Por favor, escribe tu nombre.';
       valid = false;
@@ -160,9 +165,11 @@
 
     if (!valid) return;
 
-    // Construct WhatsApp message
-    const whatsappPhoneNumber = '34622529042'; // Número de A Coruña
-    const message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value}. Mi nombre es ${nombre.value}.`;
+    // Construct WhatsApp message & route to appropriate center phone
+    const isTemple = centro.value === 'temple';
+    const whatsappPhoneNumber = isTemple ? '34722708961' : '34622529042';
+    const centroName = isTemple ? 'O Temple' : 'A Coruña';
+    const message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value} en ${centroName}. Mi nombre es ${nombre.value}.`;
     const whatsappUrl = `https://wa.me/${whatsappPhoneNumber}?text=${encodeURIComponent(message)}`;
 
     // Open WhatsApp in a new tab

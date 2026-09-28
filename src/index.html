@@ -260,6 +260,15 @@
           <h2 id="reserva-title" class="section__title">Reserva tu momento</h2>
           <form id="booking-form" class="form" novalidate>
             <div class="form__group">
+              <label for="centro" class="form__label">Centro</label>
+              <select id="centro" name="centro" class="form__input" required>
+                <option value="">Selecciona tu centro</option>
+                <option value="coruna">A Coruña</option>
+                <option value="temple">O Temple</option>
+              </select>
+              <span class="form__error" id="error-centro" aria-live="polite"></span>
+            </div>
+            <div class="form__group">
               <label for="nombre" class="form__label">Nombre</label>
               <input type="text" id="nombre" name="nombre" class="form__input" placeholder="Tu nombre" required />
               <span class="form__error" id="error-nombre" aria-live="polite"></span>
