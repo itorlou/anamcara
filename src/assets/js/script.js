@@ -89,7 +89,6 @@
   const nombre = document.getElementById('nombre');
   const servicio = document.getElementById('servicio');
   const fecha = document.getElementById('fecha');
-  const domicilio = document.getElementById('domicilio');
   const errorNombre = document.getElementById('error-nombre');
   const errorServicio = document.getElementById('error-servicio');
   const errorFecha = document.getElementById('error-fecha');
@@ -111,11 +110,12 @@
     defaultOption.textContent = "Selecciona un servicio";
     servicio.appendChild(defaultOption);
 
-    // Cargar todos los servicios activos del JSON de Notion
+    // Cargar todos los servicios activos del JSON de Notion (excluyendo packs y bonos)
     allNotionServices.forEach(service => {
-      // Excluir Presoterapia si está marcado el servicio a domicilio
-      if (domicilio.checked && service.title === 'Presoterapia') {
-        return; // Skip Presoterapia if domicilio is checked
+      const cat = (service.category || '').toUpperCase();
+      const isBonoOrPack = cat.includes('BONO') || cat.includes('PACK') || /bono|pack/i.test(service.title || '');
+      if (isBonoOrPack) {
+        return; // Excluir bonos y packs del desplegable de reserva
       }
 
       const option = document.createElement('option');
@@ -131,8 +131,6 @@
       servicio.value = ""; // Reset if the selected service is no longer available
     }
   }
-
-  domicilio.addEventListener('change', updateServiceOptions);
 
   function clearErrors() {
     errorNombre.textContent = '';
@@ -164,10 +162,7 @@
 
     // Construct WhatsApp message
     const whatsappPhoneNumber = '34622529042'; // Número de A Coruña
-    let message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value}. Mi nombre es ${nombre.value}.`;
-    if (domicilio.checked) {
-      message += ` El servicio es a domicilio.`;
-    }
+    const message = `¡Hola! Me gustaría reservar un/a ${servicio.value} para el día ${fecha.value}. Mi nombre es ${nombre.value}.`;
     const whatsappUrl = `https://wa.me/${whatsappPhoneNumber}?text=${encodeURIComponent(message)}`;
 
     // Open WhatsApp in a new tab

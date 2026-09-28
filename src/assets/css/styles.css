@@ -430,13 +430,6 @@ img {
   color: #f0ede8;
   font-size: 1.05rem;
   line-height: 1.8;
-  margin: 0 0 14px;
-}
-
-.packs-card__text {
-  color: var(--color-muted);
-  font-size: 0.98rem;
-  line-height: 1.8;
   margin: 0 0 28px;
 }
 
