@@ -167,7 +167,7 @@
             <span class="nav__bar"></span>
           </button>
           <ul id="primary-menu" class="nav__list">
-            <li><a href="#corporal" class="nav__link">Servicios</a></li>
+            <li><a href="#masajes" class="nav__link">Servicios</a></li>
             <li><a href="#reserva" class="nav__link">Reserva</a></li>
             <li><a href="#contacto" class="nav__link">Contacto</a></li>
             <li><a href="{{ site.baseurl }}/conocenos.html" class="nav__link">Conócenos</a></li>
@@ -191,32 +191,25 @@
         </div>
       </section>
 
-      <!-- Tratamientos Corporales -->
-      <section id="corporal" class="section" aria-labelledby="corporal-title">
-        <div class="container">
-          <h2 id="corporal-title" class="section__title">Tratamientos Corporales</h2>
-          <div id="corporal-container" class="grid grid--cards">
-            <!-- Los tratamientos corporales se cargarán aquí -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Tratamientos Energéticos -->
-      <section id="energetico" class="section" aria-labelledby="energetico-title">
-        <div class="container">
-          <h2 id="energetico-title" class="section__title">Tratamientos Energéticos</h2>
-          <div id="energetico-container" class="grid grid--cards">
-            <!-- Los tratamientos energéticos se cargarán aquí -->
-          </div>
-        </div>
-      </section>
+      <!-- Anchor para enlaces a #servicios -->
+      <div id="servicios"></div>
 
       <!-- Masajes -->
       <section id="masajes" class="section" aria-labelledby="masajes-title">
         <div class="container">
           <h2 id="masajes-title" class="section__title">Masajes</h2>
-          <div id="masajes-container" class="grid grid--cards">
+          <div id="masajes-container" class="services-list">
             <!-- Los masajes se cargarán aquí -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Tratamientos Corporales -->
+      <section id="corporal" class="section" aria-labelledby="corporal-title">
+        <div class="container">
+          <h2 id="corporal-title" class="section__title">Tratamientos Corporales</h2>
+          <div id="corporal-container" class="services-list">
+            <!-- Los tratamientos corporales se cargarán aquí -->
           </div>
         </div>
       </section>
@@ -225,8 +218,18 @@
       <section id="rituales" class="section" aria-labelledby="rituales-title">
         <div class="container">
           <h2 id="rituales-title" class="section__title">Rituales</h2>
-          <div id="rituales-container" class="grid grid--cards">
+          <div id="rituales-container" class="services-list">
             <!-- Los rituales se cargarán aquí -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Tratamientos Energéticos -->
+      <section id="energetico" class="section" aria-labelledby="energetico-title">
+        <div class="container">
+          <h2 id="energetico-title" class="section__title">Tratamientos Energéticos</h2>
+          <div id="energetico-container" class="services-list">
+            <!-- Los tratamientos energéticos se cargarán aquí -->
           </div>
         </div>
       </section>
@@ -235,8 +238,36 @@
       <section id="packs" class="section" aria-labelledby="packs-title">
         <div class="container">
           <h2 id="packs-title" class="section__title">Packs y Bonos</h2>
-          <div id="packs-container" class="grid grid--cards">
-            <!-- Los packs y bonos se cargarán aquí -->
+          <div class="packs-card">
+            <span class="packs-card__badge">A consultar</span>
+            <h3 class="packs-card__title">Bonos y Sesiones Personalizadas</h3>
+            <p class="packs-card__intro">
+              Diseñamos bonos y opciones combinadas a tu medida para disfrutar de un cuidado continuo y adaptado a tus necesidades. Puedes consultar disponibilidad y tarifas especiales para:
+            </p>
+            <div class="packs-card__tags">
+              <div class="packs-card__tag">
+                <span class="packs-card__tag-icon" aria-hidden="true">✦</span>
+                <span>Masajes</span>
+              </div>
+              <div class="packs-card__tag">
+                <span class="packs-card__tag-icon" aria-hidden="true">✦</span>
+                <span>Presoterapia</span>
+              </div>
+              <div class="packs-card__tag">
+                <span class="packs-card__tag-icon" aria-hidden="true">✦</span>
+                <span>Drenaje Linfático Manual (DLM)</span>
+              </div>
+              <div class="packs-card__tag">
+                <span class="packs-card__tag-icon" aria-hidden="true">✦</span>
+                <span>Maderoterapia</span>
+              </div>
+            </div>
+            <div class="packs-card__footer">
+              <p class="packs-card__footer-note">
+                Consúltanos sin compromiso y te asesoramos para elegir la combinación ideal para ti.
+              </p>
+              <a href="https://wa.me/34622529042?text=Hola,%20me%20gustar%C3%ADa%20consultar%20informaci%C3%B3n%20sobre%20los%20packs%20y%20bonos." target="_blank" rel="noopener noreferrer" class="btn btn--gold">Consultar packs y bonos</a>
+            </div>
           </div>
         </div>
       </section>
@@ -361,35 +392,37 @@
             return response.json();
           })
           .then(services => {
-            // Obtener todos los contenedores
-            const corporalContainer = document.getElementById('corporal-container');
-            const energeticoContainer = document.getElementById('energetico-container');
+            // Contenedores por categoría
             const masajesContainer = document.getElementById('masajes-container');
+            const corporalContainer = document.getElementById('corporal-container');
             const ritualesContainer = document.getElementById('rituales-container');
-            const packsContainer = document.getElementById('packs-container');
+            const energeticoContainer = document.getElementById('energetico-container');
 
-            if (corporalContainer && energeticoContainer && masajesContainer && ritualesContainer && packsContainer) {
+            if (masajesContainer && corporalContainer && ritualesContainer && energeticoContainer) {
               services.forEach(service => {
-                const card = document.createElement('article');
-                card.classList.add('card');
+                const item = document.createElement('article');
+                item.classList.add('service-item');
 
-                card.innerHTML = `
-                  <h3 class="card__title">${service.title}</h3>
-                  <p class="card__text">${service.description}</p>
+                item.innerHTML = `
+                  <div class="service-item__header">
+                    <span class="service-item__bullet" aria-hidden="true">✦</span>
+                    <h3 class="service-item__title">${service.title}</h3>
+                  </div>
+                  <p class="service-item__description">${service.description}</p>
                 `;
 
-                // Distribuir servicios por categorías
-                if (service.category === 'CORPORAL') {
-                  corporalContainer.appendChild(card);
-                } else if (service.category === 'ENERGÉTICO') {
-                  energeticoContainer.appendChild(card);
-                } else if (service.category === 'Cuidados') {
-                  masajesContainer.appendChild(card);
-                } else if (service.category === 'RITUALES') {
-                  ritualesContainer.appendChild(card);
-                } else if (service.category === 'PACKS_BONOS') {
-                  packsContainer.appendChild(card);
+                // Distribuir servicios según carta de servicios
+                const cat = (service.category || '').toUpperCase();
+                if (cat === 'CUIDADOS' || cat === 'MASAJES' || cat === 'MASAJE') {
+                  masajesContainer.appendChild(item);
+                } else if (cat === 'CORPORAL' || cat === 'CORPORALES') {
+                  corporalContainer.appendChild(item);
+                } else if (cat === 'RITUALES' || cat === 'RITUAL') {
+                  ritualesContainer.appendChild(item);
+                } else if (cat === 'ENERGÉTICO' || cat === 'ENERGETICO') {
+                  energeticoContainer.appendChild(item);
                 }
+                // PACKS_BONOS: se gestionan a consultar en la tarjeta informativa de Packs y Bonos
               });
             }
           })
