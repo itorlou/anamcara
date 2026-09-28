@@ -239,34 +239,19 @@
         <div class="container">
           <h2 id="packs-title" class="section__title">Packs y Bonos</h2>
           <div class="packs-card">
-            <span class="packs-card__badge">A consultar</span>
+            <span class="packs-card__badge">A tu medida</span>
             <h3 class="packs-card__title">Bonos y Sesiones Personalizadas</h3>
             <p class="packs-card__intro">
-              Diseñamos bonos y opciones combinadas a tu medida para disfrutar de un cuidado continuo y adaptado a tus necesidades. Puedes consultar disponibilidad y tarifas especiales para:
+              En Anam Cara cada persona y cada momento son únicos. Por eso no trabajamos con paquetes cerrados ni combinaciones rígidas: nos adaptamos por completo a tus necesidades, a lo que tu cuerpo pide y a tu propio ritmo.
             </p>
-            <div class="packs-card__tags">
-              <div class="packs-card__tag">
-                <span class="packs-card__tag-icon" aria-hidden="true">✦</span>
-                <span>Masajes</span>
-              </div>
-              <div class="packs-card__tag">
-                <span class="packs-card__tag-icon" aria-hidden="true">✦</span>
-                <span>Presoterapia</span>
-              </div>
-              <div class="packs-card__tag">
-                <span class="packs-card__tag-icon" aria-hidden="true">✦</span>
-                <span>Drenaje Linfático Manual (DLM)</span>
-              </div>
-              <div class="packs-card__tag">
-                <span class="packs-card__tag-icon" aria-hidden="true">✦</span>
-                <span>Maderoterapia</span>
-              </div>
-            </div>
+            <p class="packs-card__text">
+              Diseñamos bonos y experiencias a medida para que disfrutes de un acompañamiento continuo, flexible y verdaderamente reconfortante. Cuéntanos qué buscas o cómo te sientes y crearemos la propuesta ideal para ti.
+            </p>
             <div class="packs-card__footer">
               <p class="packs-card__footer-note">
-                Consúltanos sin compromiso y te asesoramos para elegir la combinación ideal para ti.
+                Escríbenos sin compromiso y diseñamos tu bono o experiencia personalizada.
               </p>
-              <a href="https://wa.me/34622529042?text=Hola,%20me%20gustar%C3%ADa%20consultar%20informaci%C3%B3n%20sobre%20los%20packs%20y%20bonos." target="_blank" rel="noopener noreferrer" class="btn btn--gold">Consultar packs y bonos</a>
+              <a href="https://wa.me/34622529042?text=Hola,%20me%20gustar%C3%ADa%20consultar%20un%20pack%20o%20bono%20personalizado%20a%20mi%20medida." target="_blank" rel="noopener noreferrer" class="btn btn--gold">Consultar pack personalizado</a>
             </div>
           </div>
         </div>
@@ -399,17 +384,35 @@
             const energeticoContainer = document.getElementById('energetico-container');
 
             if (masajesContainer && corporalContainer && ritualesContainer && energeticoContainer) {
-              services.forEach(service => {
+              services.forEach((service, index) => {
                 const item = document.createElement('article');
                 item.classList.add('service-item');
+                const descId = `service-desc-${index}`;
 
                 item.innerHTML = `
-                  <div class="service-item__header">
-                    <span class="service-item__bullet" aria-hidden="true">✦</span>
-                    <h3 class="service-item__title">${service.title}</h3>
+                  <button type="button" class="service-item__trigger" aria-expanded="false" aria-controls="${descId}">
+                    <span class="service-item__title-group">
+                      <span class="service-item__bullet" aria-hidden="true">✦</span>
+                      <h3 class="service-item__title">${service.title}</h3>
+                    </span>
+                    <span class="service-item__arrow-wrap" aria-hidden="true">
+                      <svg class="service-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="service-item__body" id="${descId}">
+                    <div class="service-item__body-inner">
+                      <p class="service-item__description">${service.description || ''}</p>
+                    </div>
                   </div>
-                  <p class="service-item__description">${service.description}</p>
                 `;
+
+                const trigger = item.querySelector('.service-item__trigger');
+                trigger.addEventListener('click', () => {
+                  const isOpen = item.classList.toggle('is-open');
+                  trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
 
                 // Distribuir servicios según carta de servicios
                 const cat = (service.category || '').toUpperCase();
