@@ -541,6 +541,66 @@ img {
   }
 }
 
+.grid--contact-locations {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+@media (min-width: 768px) {
+  .grid--contact-locations {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+}
+
+.contact-location-card {
+  border: 1px solid rgba(199, 160, 99, 0.25);
+  border-radius: var(--radius);
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-location-card__title {
+  font-family: 'Lora', serif;
+  font-size: 1.35rem;
+  margin: 0;
+  color: var(--color-gold);
+}
+
+.contact-location-card .map__wrap {
+  margin: 0;
+}
+
+.contact-location-card .map {
+  height: 280px;
+}
+
+.contact-location-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-location-card__details .contact__line {
+  margin: 0;
+}
+
+.contact__general {
+  text-align: center;
+  padding-top: 16px;
+}
+
+.contact__general .contact__line {
+  margin: 0 0 8px;
+}
+
 .contact__line {
   margin: 0 0 10px;
 }
