@@ -20,14 +20,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <style>
-    @font-face {
-      font-family: 'Tatline Neue';
-      src: url('data:font/truetype;charset=utf-8;base64,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') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-
     :root {
       --color-gold: #C48E45;
       --color-gold-light: #D4A359;
@@ -45,7 +37,7 @@
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
       --font-body: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-heading: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-card-service: 'Tatline Neue', 'TatlineNeue-Normal', 'Montserrat', sans-serif;
+      --font-card-service: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     *, *::before, *::after {
@@ -163,34 +155,33 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0;
-      transition: padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 14px 0;
+      transition: padding 0.3s ease;
     }
 
     .header.scrolled .header__inner {
-      padding: 13px 0;
+      padding: 8px 0;
     }
 
     .logo {
-      display: inline-flex;
+      display: flex;
       align-items: center;
+      color: var(--color-text);
       text-decoration: none;
+      width: 100%;
       max-width: 250px;
     }
 
     .logo__img {
       width: 100%;
-      max-width: 210px;
       height: auto;
-      max-height: 56px;
       object-fit: contain;
       filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-      transition: max-width 0.3s ease, max-height 0.3s ease;
+      transition: max-width 0.3s ease;
     }
 
     .header.scrolled .logo__img {
-      max-width: 180px;
-      max-height: 46px;
+      max-width: 150px;
     }
 
     .logo__text {
@@ -503,7 +494,7 @@
       padding: 24px 16px;
     }
 
-    /* Texto Servicio en Tatline Neue */
+    /* Texto Servicio */
     .voucher-service-title {
       font-family: var(--font-card-service);
       color: var(--color-gold-deep);
@@ -511,7 +502,7 @@
       line-height: 1.25;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.08em;
       position: absolute;
       top: 50.8%;
       left: 10%;
@@ -614,18 +605,16 @@
     /* Responsive */
     @media (max-width: 768px) {
       .header__inner {
-        padding: 15px 0;
-      }
-      .header.scrolled .header__inner {
         padding: 10px 0;
       }
-      .logo__img {
-        max-width: 175px;
-        max-height: 46px;
+      .header.scrolled .header__inner {
+        padding: 6px 0;
+      }
+      .logo {
+        max-width: 200px;
       }
       .header.scrolled .logo__img {
         max-width: 150px;
-        max-height: 40px;
       }
       .nav__toggle {
         display: flex;
@@ -783,7 +772,7 @@
 
           <div class="voucher-card-wrapper">
             <div id="voucher-preview" class="voucher-card-vertical">
-              <!-- Tratamiento con tipografía Tatline Neue -->
+              <!-- Tratamiento del Vale Regalo -->
               <div id="preview-service-text" class="voucher-service-title">
                 MASAJES RELAJANTES
               </div>
@@ -1118,25 +1107,23 @@
       bgImg.onload = async () => {
         ctx.drawImage(bgImg, 0, 0, 1241, 1748);
 
-        // Cargar fuente Tatline Neue para el canvas
-        try {
-          const font = new FontFace('Tatline Neue', 'url(data:font/truetype;charset=utf-8;base64,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)');
-          await font.load();
-          document.fonts.add(font);
-        } catch (e) {
-          console.warn('FontFace load error, fallback font used', e);
+        // Asegurar que las fuentes estén listas
+        if (document.fonts) {
+          try {
+            await document.fonts.ready;
+          } catch (e) {}
         }
 
-        // Texto del servicio en Tatline Neue
+        // Texto del servicio en tipografía oficial Montserrat
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = '#8E6024';
 
         const serviceText = (giftState.serviceName || 'MASAJES RELAJANTES').toUpperCase();
-        let fontSize = 72;
-        if (serviceText.length > 24) fontSize = 58;
-        if (serviceText.length > 36) fontSize = 46;
-        ctx.font = `600 ${fontSize}px 'Tatline Neue', 'TatlineNeue-Normal', 'Montserrat', sans-serif`;
+        let fontSize = 70;
+        if (serviceText.length > 24) fontSize = 56;
+        if (serviceText.length > 36) fontSize = 44;
+        ctx.font = `600 ${fontSize}px 'Montserrat', sans-serif`;
 
         // Posición calculada exactamente sobre la línea dorada
         ctx.fillText(serviceText, 620.5, 888);
