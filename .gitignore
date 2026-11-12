@@ -33,3 +33,12 @@ src/_site/
 .env.local
 .env.*.local
 *.env
+
+# Local mockups & IDE configs
+mockup-*.html
+.agent/
+.cursor/
+.gemini/
+.impeccable/
+tools/
+src/assets/images/template_base64.txt

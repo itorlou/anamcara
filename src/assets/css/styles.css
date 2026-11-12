@@ -1,7 +1,7 @@
 :root {
   --color-bg: #181818;
   --color-text: #ffffff;
-  --color-gold: #c7a063;
+  --color-gold: #C48E45;
   --color-muted: #cfcfcf;
   --max-width: 1100px;
   --radius: 10px;
@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -84,7 +85,7 @@ img {
 }
 
 /* .logo__text {
-  font-family: 'Lora', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   letter-spacing: 0.5px;
 } */
@@ -131,6 +132,25 @@ img {
   color: var(--color-gold);
 }
 
+.nav__link--highlight {
+  color: var(--color-gold);
+  font-weight: 600;
+  border: 1px solid rgba(196, 142, 69, 0.4);
+  background: rgba(196, 142, 69, 0.1);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.nav__link--highlight:hover {
+  background: var(--color-gold);
+  color: #141414;
+}
+
+.nav__link.is-active {
+  color: var(--color-gold);
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-gold);
+}
+
 /* Hero */
 /* Hero */
 .hero {
@@ -153,7 +173,7 @@ img {
 }
 
 .hero__title {
-  font-family: 'Lora', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(32px, 5vw, 56px);
   margin: 0 0 12px;
   color: #ffffff; /* Blanco */
@@ -219,7 +239,7 @@ img {
 }
 
 .card__title {
-  font-family: 'Lora', serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0 0 8px;
 }
 
@@ -310,7 +330,7 @@ img {
 }
 
 .service-item__title {
-  font-family: 'Lora', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.18rem;
   font-weight: 500;
   margin: 0;
@@ -420,7 +440,7 @@ img {
 }
 
 .packs-card__title {
-  font-family: 'Lora', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(22px, 3vw, 30px);
   margin: 0 0 16px;
   color: #ffffff;
@@ -488,7 +508,7 @@ img {
 }
 
 .stack__title {
-  font-family: 'Lora', serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0 0 12px;
 }
 
@@ -826,7 +846,7 @@ img {
 }
 
 .contact-location-card__title {
-  font-family: 'Lora', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.35rem;
   margin: 0;
   color: var(--color-gold);

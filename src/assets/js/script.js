@@ -202,4 +202,30 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
 
+// MEMORIA: Transferir datos del formulario a la página de Tarjeta Regalo
+function transferBookingToGiftCard() {
+  const centroEl = document.getElementById('centro');
+  const nombreEl = document.getElementById('nombre');
+  const servicioEl = document.getElementById('servicio');
+
+  const centro = centroEl ? centroEl.value : 'coruna';
+  const nombre = nombreEl ? nombreEl.value.trim() : '';
+  const servicio = servicioEl ? servicioEl.value : '';
+
+  const data = { centro, nombre, servicio };
+  try {
+    sessionStorage.setItem('anamcara_booking_memory', JSON.stringify(data));
+  } catch (e) {
+    console.warn('Storage not available', e);
+  }
+
+  const params = new URLSearchParams();
+  if (centro) params.set('centro', centro);
+  if (nombre) params.set('nombre', nombre);
+  if (servicio) params.set('servicio', servicio);
+
+  const targetUrl = 'tarjetas-regalo.html' + (params.toString() ? '?' + params.toString() : '');
+  window.location.href = targetUrl;
+}
+
 

@@ -2,186 +2,546 @@
 ---
 <!DOCTYPE html>
 <html lang="es-ES">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AnamCara | Preguntas Frecuentes y Contacto en A Coruña</title>
-    <meta name="description" content="Preguntas frecuentes y datos de contacto de AnamCara: horarios, carta de servicios y reserva de masajes en A Coruña." />
-    <meta name="author" content="AnamCara Wellness" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href="https://anamcara-wellness.es/faq.html" />
-    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png" sizes="any">
-    <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/favicon.png">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Preguntas Frecuentes | AnamCara Wellness</title>
+  <meta name="description" content="Preguntas frecuentes sobre citas, horarios, centros en A Coruña (Avenida de Oza) y O Temple (Rúa Tapia), y canje de Tarjetas Regalo AnamCara." />
 
-    <!-- Geotags / Local SEO -->
-    <meta name="geo.region" content="ES-GA" />
-    <meta name="geo.placename" content="A Coruña" />
-    <meta name="geo.position" content="43.354303;-8.396495" />
-    <meta name="ICBM" content="43.354303, -8.396495" />
+  <link rel="canonical" href="https://anamcara-wellness.es/faq.html" />
+  <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png" sizes="any">
+  <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/favicon.png">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#C48E45" />
 
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="AnamCara | Preguntas Frecuentes y Contacto" />
-    <meta property="og:description" content="Preguntas frecuentes, horarios y cómo contactar con AnamCara en A Coruña." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://anamcara-wellness.es/faq.html" />
-    <meta property="og:image" content="https://anamcara-wellness.es/assets/images/banner.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Preguntas Frecuentes AnamCara" />
-    <meta property="og:site_name" content="AnamCara Wellness" />
-    <meta property="og:locale" content="es_ES" />
+  <!-- Geotags / Local SEO -->
+  <meta name="geo.region" content="ES-GA" />
+  <meta name="geo.placename" content="A Coruña" />
+  <meta name="geo.position" content="43.354303;-8.396495" />
+  <meta name="ICBM" content="43.354303, -8.396495" />
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AnamCara | Preguntas Frecuentes y Contacto" />
-    <meta name="twitter:description" content="Preguntas frecuentes y cómo reservar en AnamCara Wellness A Coruña." />
-    <meta name="twitter:image" content="https://anamcara-wellness.es/assets/images/banner.jpg" />
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="AnamCara | Preguntas Frecuentes y Contacto" />
+  <meta property="og:description" content="Preguntas frecuentes, horarios y funcionamiento de tarjetas regalo en AnamCara Wellness A Coruña y O Temple." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anamcara-wellness.es/faq.html" />
+  <meta property="og:image" content="https://anamcara-wellness.es/assets/images/banner.jpg" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Tipografía Unificada Oficial: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
+  <style>
+    :root {
+      --color-gold: #C48E45;
+      --color-gold-deep: #875514;
+      --color-gold-light: #e0af6b;
+      --color-arena: #F3EDE0;
+      --color-bg: #181818;
+      --color-card-bg: #222222;
+      --color-card-border: rgba(196, 142, 69, 0.28);
+      --color-text: #FFFFFF;
+      --color-muted: #CCCCCC;
+      --color-border: rgba(196, 142, 69, 0.25);
+      --max-width: 1180px;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      --font-body: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
 
-    <!-- Structured Data: FAQPage JSON-LD -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "@id": "https://anamcara-wellness.es/faq.html#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿Qué horario tenéis?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Atendemos de lunes a viernes, de 10:00 a 19:00, con cita previa."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cómo puedo reservar?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Puedes reservar directamente a través de nuestro formulario en la sección 'Reserva' o contactándonos por teléfono, WhatsApp o email."
-            }
-          }
-        ]
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: max(60px, env(safe-area-inset-bottom, 24px));
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* h1 y h2 en BLANCO */
+    h1, h2, .section__title {
+      font-family: var(--font-heading);
+      color: #FFFFFF !important;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    h2, .section__title {
+      font-size: clamp(1.8rem, 3.6vw, 2.3rem);
+      margin-bottom: 24px;
+      position: relative;
+    }
+    h2::after, .section__title::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: var(--color-gold);
+      margin: 12px auto 0 auto;
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: var(--color-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--color-gold);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: var(--color-gold-light);
+    }
+
+    /* Header Adaptativo */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(24, 24, 24, 0.88);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(196, 142, 69, 0.25);
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(18, 18, 18, 0.96);
+      border-bottom-color: rgba(196, 142, 69, 0.4);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      transition: padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .header.scrolled .header__inner {
+      padding: 8px 0;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      max-width: 220px;
+    }
+
+    .logo__img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      max-height: 48px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+      transition: max-width 0.3s ease, max-height 0.3s ease;
+    }
+
+    .header.scrolled .logo__img {
+      max-width: 140px;
+      max-height: 38px;
+    }
+
+    .logo__text {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      transition: font-size 0.3s ease;
+    }
+
+    .header.scrolled .logo__text {
+      font-size: 1.15rem;
+    }
+
+    .logo__text span {
+      color: var(--color-gold);
+    }
+
+    .nav__toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav__bar {
+      height: 2px;
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: 2px;
+    }
+
+    .nav__list {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 24px;
+    }
+    .nav__link {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #E0E0E0;
+      letter-spacing: 0.02em;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .nav__link:hover {
+      color: var(--color-gold);
+      background: rgba(196, 142, 69, 0.08);
+    }
+    .nav__link.is-active {
+      color: var(--color-gold);
+      font-weight: 600;
+      border: 1px solid rgba(196, 142, 69, 0.4);
+      background: rgba(196, 142, 69, 0.1);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 13px 26px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn--gold {
+      background-color: var(--color-gold);
+      color: #141414 !important;
+    }
+    .btn--gold:hover {
+      background-color: var(--color-gold-light);
+      color: #141414 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+    .section--hero-subpage {
+      padding: 64px 0 32px 0;
+      text-align: center;
+    }
+
+    /* FAQ Items */
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .faq-card {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--radius);
+      padding: 26px 28px;
+      box-shadow: var(--shadow);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .faq-card:hover {
+      border-color: rgba(196, 142, 69, 0.5);
+      transform: translateY(-2px);
+    }
+    .faq-card h3 {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      color: var(--color-gold);
+      font-size: 1.15rem;
+    }
+    .faq-card h3 span {
+      color: #FFFFFF;
+    }
+    .faq-card p {
+      margin-top: 10px;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    /* Footer Oficial */
+    .footer {
+      background-color: #121212;
+      border-top: 1px solid rgba(196, 142, 69, 0.2);
+      padding: 36px 0;
+      margin-top: 60px;
+    }
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .link--muted {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #A0A0A0;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+    .link--muted:hover {
+      color: var(--color-gold);
+    }
+    .footer__icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav__toggle {
+        display: flex;
       }
-    </script>
-  </head>
-  <body>
-    <header class="header" id="top">
-      <div class="container header__inner">
-        <a href="{{ site.baseurl }}/index.html" class="logo" aria-label="AnamCara - Inicio">
-          <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logotipo AnamCara" class="logo__img" width="180" height="50" fetchpriority="high" />
-        </a>
-        <nav class="nav" aria-label="Navegación principal">
-          <button class="nav__toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menú">
-            <span class="nav__bar"></span>
-            <span class="nav__bar"></span>
-            <span class="nav__bar"></span>
-          </button>
-          <ul id="primary-menu" class="nav__list">
-            <li><a href="{{ site.baseurl }}/index.html#servicios" class="nav__link">Servicios</a></li>
-            <li><a href="{{ site.baseurl }}/index.html#reserva" class="nav__link">Reserva</a></li>
-            <li><a href="{{ site.baseurl }}/index.html#contacto" class="nav__link">Contacto</a></li>
-            <li><a href="{{ site.baseurl }}/conocenos.html" class="nav__link">Conócenos</a></li>
-            <li><a href="{{ site.baseurl }}/faq.html" class="nav__link">FAQ</a></li>
-          </ul>
-        </nav>
+      .nav__list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1c1c1c;
+        border-bottom: 1px solid var(--color-border);
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 16px;
+      }
+      .nav__list.is-open {
+        display: flex;
+      }
+      .faq-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Adaptativo -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="{{ site.baseurl }}/" class="logo" aria-label="AnamCara - Inicio">
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logotipo AnamCara" class="logo__img" width="180" height="50" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block';" />
+        <span class="logo__text" style="display:none;">Anam<span>Cara</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menú">
+          <span class="nav__bar"></span>
+          <span class="nav__bar"></span>
+          <span class="nav__bar"></span>
+        </button>
+        <ul id="primary-menu" class="nav__list">
+          <li><a href="{{ site.baseurl }}/#masajes" class="nav__link">Servicios</a></li>
+          <li><a href="{{ site.baseurl }}/#reserva" class="nav__link">Reserva</a></li>
+          <li><a href="{{ site.baseurl }}/tarjetas-regalo.html" class="nav__link">Tarjetas Regalo</a></li>
+          <li><a href="{{ site.baseurl }}/#contacto" class="nav__link">Contacto</a></li>
+          <li><a href="{{ site.baseurl }}/conocenos.html" class="nav__link">Conócenos</a></li>
+          <li><a href="{{ site.baseurl }}/faq.html" class="nav__link is-active">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--hero-subpage">
+      <div class="container">
+        <h1>Preguntas Frecuentes</h1>
+        <p style="max-width: 680px; margin: 0 auto; color: #D6D6D6;">
+          Resolvemos tus dudas sobre horarios, citas en nuestros centros de A Coruña y O Temple, y funcionamiento de las tarjetas regalo.
+        </p>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section id="faq" class="section" aria-labelledby="faq-title">
-        <div class="container">
-          <h2 id="faq-title" class="section__title">Preguntas Frecuentes</h2>
-          <p class="section__intro">Aquí respondemos a las dudas más comunes sobre nuestros servicios.</p>
-          <div class="faq__list">
-            <article class="faq__item">
-              <h3 class="faq__question">¿Qué horario tenéis?</h3>
-              <p class="faq__answer">Atendemos de lunes a viernes, de 10:00 a 19:00, con cita previa.</p>
-            </article>
-            <article class="faq__item">
-              <h3 class="faq__question">¿Cómo puedo reservar?</h3>
-              <p class="faq__answer">Puedes reservar directamente a través de nuestro formulario en la sección 'Reserva' o contactándonos por teléfono, whatsapp o email.</p>
-            </article>
-          </div>
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <h2 class="section__title">Dudas Frecuentes</h2>
+        <div class="faq-container">
+          
+          <article class="faq-card">
+            <h3><span>¿Qué horario de atención tenéis?</span></h3>
+            <p>
+              Atendemos de <strong>lunes a viernes, de 10:00 a 20:00</strong>, siempre bajo cita previa para garantizar la máxima tranquilidad, privacidad y dedicación en cada sesión.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3><span>¿Dónde están situados vuestros centros?</span></h3>
+            <p>
+              Disponemos de dos centros para tu comodidad:<br>
+              • <strong>A Coruña:</strong> Avenida de Oza, A Coruña.<br>
+              • <strong>O Temple:</strong> Rúa Tapia, O Temple.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3><span>¿Cómo funcionan y se canjean las Tarjetas Regalo?</span></h3>
+            <p>
+              Puedes configurarla y solicitarla fácilmente desde nuestra página de <a href="{{ site.baseurl }}/tarjetas-regalo.html">Tarjetas Regalo</a>. La persona agasajada solo tiene que escribirnos por WhatsApp indicando el centro y el tratamiento asignado para coordinar el día y hora que mejor le convengan.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3><span>¿Qué plazo de validez tienen las Tarjetas Regalo?</span></h3>
+            <p>
+              Todas las tarjetas regalo emitidas en Anam Cara cuentan con un <strong>plazo fijo de 2 meses de validez</strong> desde su fecha de emisión oficial.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3><span>¿Ofrecéis bonos y packs personalizados?</span></h3>
+            <p>
+              Sí. Nos adaptamos plenamente a tus necesidades, ritmo y lo que tu cuerpo pide. Consúltanos directamente por WhatsApp y diseñaremos tu bono o experiencia personalizada sin compromiso.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3><span>¿Cómo puedo reservar mi cita?</span></h3>
+            <p>
+              Puedes solicitarla directamente a través de nuestro <a href="{{ site.baseurl }}/#reserva">formulario de reserva</a> o enviándonos un WhatsApp (+34 622 529 042 para A Coruña o +34 722 708 961 para O Temple).
+            </p>
+          </article>
+
         </div>
-      </section>
 
-      <!-- Contacto -->
-      <section id="contacto" class="section" aria-labelledby="contacto-title">
-        <div class="container">
-          <h2 id="contacto-title" class="section__title">Contacto</h2>
-          <div class="grid grid--contact-locations">
-            <!-- A Coruña -->
-            <div class="contact-location-card">
-              <h3 class="contact-location-card__title">A Coruña</h3>
-              <div class="map__wrap">
-                <iframe title="Ubicación Anam Cara Wellness en A Coruña" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2901.08640462598!2d-8.396495!3d43.35430319999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e7b005d5bfcbf%3A0x33a177579386be6b!2sAnam%20Cara%20Wellness!5e0!3m2!1ses!2ses!4v1785322909236!5m2!1ses!2ses" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-              </div>
-              <div class="contact-location-card__details">
-                <p class="contact__line"><strong>Teléfono Coruña:</strong> <a href="tel:+34622529042" class="link">+34 622 529 042</a></p>
-                <p class="contact__line"><a href="https://maps.app.goo.gl/qWBqJgkHw1BEZ5cH8" target="_blank" rel="noopener noreferrer" class="link link--muted">Ver en Google Maps ↗</a></p>
-              </div>
-            </div>
-
-            <!-- O Temple -->
-            <div class="contact-location-card">
-              <h3 class="contact-location-card__title">O Temple</h3>
-              <div class="map__wrap">
-                <iframe title="Ubicación Anam Cara O Temple" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.7303038486047!2d-8.359947423851557!3d43.31742767112028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e6514a3733b1b%3A0xa6e78fc1bc7a8dde!2sAnam%20Cara%20O%20Temple!5e0!3m2!1ses!2ses!4v1711645000000!5m2!1ses!2ses" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-              </div>
-              <div class="contact-location-card__details">
-                <p class="contact__line"><strong>Teléfono O Temple:</strong> <a href="tel:+34722708961" class="link">+34 722 708 961</a></p>
-                <p class="contact__line"><a href="https://maps.app.goo.gl/Qjy2AX9gYiJVTAA1A" target="_blank" rel="noopener noreferrer" class="link link--muted">Ver en Google Maps ↗</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact__general">
-            <p class="contact__line"><strong>Email:</strong> <a href="mailto:anamcara.masajes@gmail.com" class="link">anamcara.masajes@gmail.com</a></p>
-            <p class="contact__note">Atendemos con cita previa para ofrecerte una experiencia tranquila y personalizada.</p>
-          </div>
+        <div style="text-align: center; margin-top: 48px;">
+          <a href="{{ site.baseurl }}/#reserva" class="btn btn--gold">Reserva tu cita ahora</a>
         </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer__inner">
-        <!--<p>© <span id="year"></span> AnămCara · A Coruña, Galicia</p>-->
-        <a href="{{ site.baseurl }}/index.html#top" class="link link--muted">Volver arriba</a>
-        <a href="https://wa.me/34622529042" target="_blank" rel="noopener noreferrer" class="link link--muted" aria-label="Contactar por WhatsApp Coruña">
-          <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="var(--color-gold)"/>
-          </svg>
-          <span class="footer__text">WhatsApp Coruña</span>
-        </a>
-        <a href="https://wa.me/34722708961" target="_blank" rel="noopener noreferrer" class="link link--muted" aria-label="Contactar por WhatsApp O Temple">
-          <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="var(--color-gold)"/>
-          </svg>
-          <span class="footer__text">WhatsApp O Temple</span>
-        </a>
-        <a href="https://www.instagram.com/anamcara.wellness/" target="_blank" rel="noopener noreferrer" class="link link--muted" aria-label="Instagram">
-          <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="var(--color-gold)"/>
-          </svg>
-          <span class="footer__text">Instagram</span>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61586145147664" target="_blank" rel="noopener noreferrer" class="link link--muted" aria-label="Facebook">
-          <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="var(--color-gold)"/>
-          </svg>
-          <span class="footer__text">Facebook</span>
-        </a>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="{{ site.baseurl }}/assets/js/script.js"></script>
-  </body>
+  <!-- Footer Oficial con SVGs -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="link link--muted">Volver arriba</a>
+      <a href="https://wa.me/34622529042" target="_blank" rel="noopener noreferrer nofollow" class="link link--muted" aria-label="Contactar por WhatsApp Coruña">
+        <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="var(--color-gold)"/>
+        </svg>
+        <span class="footer__text">WhatsApp Coruña</span>
+      </a>
+      <a href="https://wa.me/34722708961" target="_blank" rel="noopener noreferrer nofollow" class="link link--muted" aria-label="Contactar por WhatsApp O Temple">
+        <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="var(--color-gold)"/>
+        </svg>
+        <span class="footer__text">WhatsApp O Temple</span>
+      </a>
+      <a href="https://www.instagram.com/anamcara.wellness/" target="_blank" rel="noopener noreferrer nofollow" class="link link--muted" aria-label="Síguenos en Instagram">
+        <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="var(--color-gold)"/>
+        </svg>
+        <span class="footer__text">Instagram</span>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61586145147664" target="_blank" rel="noopener noreferrer nofollow" class="link link--muted" aria-label="Síguenos en Facebook">
+        <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="var(--color-gold)"/>
+        </svg>
+        <span class="footer__text">Facebook</span>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Header Adaptativo con scroll e histéresis
+    (function initAdaptiveHeader() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+
+      let ticking = false;
+
+      function updateHeader() {
+        const scrollY = window.scrollY;
+        if (scrollY > 100) {
+          header.classList.add('scrolled');
+        } else if (scrollY < 50) {
+          header.classList.remove('scrolled');
+        }
+        ticking = false;
+      }
+
+      updateHeader();
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('primary-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+</body>
 </html>

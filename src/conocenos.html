@@ -2,310 +2,526 @@
 ---
 <!DOCTYPE html>
 <html lang="es-ES">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AnamCara | Conócenos - Terapeutas y Masajes en A Coruña</title>
-    <meta name="description" content="Conoce al equipo de AnamCara en A Coruña: Noelia Montoto e Iago Bernárdez, terapeutas especializados en masajes, maderoterapia y bienestar integral." />
-    <meta name="author" content="AnamCara Wellness" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href="https://anamcara-wellness.es/conocenos.html" />
-    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png" sizes="any">
-    <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/favicon.png">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Conócenos | AnamCara Wellness - Terapeutas y Masajes en Galicia</title>
+  <meta name="description" content="Conoce al equipo de AnamCara en A Coruña y O Temple: Noelia Montoto e Iago Bernárdez, terapeutas especializados en masajes, bienestar y cuidado integral." />
 
-    <!-- Geotags / Local SEO -->
-    <meta name="geo.region" content="ES-GA" />
-    <meta name="geo.placename" content="A Coruña" />
-    <meta name="geo.position" content="43.354303;-8.396495" />
-    <meta name="ICBM" content="43.354303, -8.396495" />
+  <link rel="canonical" href="https://anamcara-wellness.es/conocenos.html" />
+  <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png" sizes="any">
+  <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/favicon.png">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#C48E45" />
 
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="AnamCara | Conócenos - Terapeutas y Masajes en A Coruña" />
-    <meta property="og:description" content="Conoce a los profesionales de AnamCara: Noelia Montoto e Iago Bernárdez, especialistas en masajes y tratamientos de bienestar en A Coruña." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://anamcara-wellness.es/conocenos.html" />
-    <meta property="og:image" content="https://anamcara-wellness.es/assets/images/banner.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Conoce al equipo de AnamCara Wellness" />
-    <meta property="og:site_name" content="AnamCara Wellness" />
-    <meta property="og:locale" content="es_ES" />
+  <!-- Geotags / Local SEO -->
+  <meta name="geo.region" content="ES-GA" />
+  <meta name="geo.placename" content="A Coruña" />
+  <meta name="geo.position" content="43.354303;-8.396495" />
+  <meta name="ICBM" content="43.354303, -8.396495" />
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AnamCara | Conócenos - Terapeutas y Masajes en A Coruña" />
-    <meta name="twitter:description" content="Conoce al equipo de profesionales de AnamCara, especialistas en bienestar y masajes en A Coruña." />
-    <meta name="twitter:image" content="https://anamcara-wellness.es/assets/images/banner.jpg" />
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="AnamCara | Conócenos - Terapeutas y Masajes en A Coruña" />
+  <meta property="og:description" content="Conoce a los profesionales de AnamCara: Noelia Montoto e Iago Bernárdez, especialistas en masajes y bienestar en A Coruña." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anamcara-wellness.es/conocenos.html" />
+  <meta property="og:image" content="https://anamcara-wellness.es/assets/images/banner.jpg" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Tipografía Unificada Oficial: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
+  <style>
+    :root {
+      --color-gold: #C48E45;
+      --color-gold-deep: #875514;
+      --color-gold-light: #e0af6b;
+      --color-arena: #F3EDE0;
+      --color-bg: #181818;
+      --color-card-bg: #222222;
+      --color-card-border: rgba(196, 142, 69, 0.28);
+      --color-text: #FFFFFF;
+      --color-muted: #CCCCCC;
+      --color-border: rgba(196, 142, 69, 0.25);
+      --max-width: 1180px;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      --font-body: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
 
-    <!-- Structured Data: AboutPage & Persons -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "@id": "https://anamcara-wellness.es/conocenos.html#about",
-        "url": "https://anamcara-wellness.es/conocenos.html",
-        "name": "Conócenos - Equipo AnamCara Wellness",
-        "description": "Información sobre el equipo de profesionales y fundadores de AnamCara Wellness en A Coruña.",
-        "publisher": {
-          "@type": "HealthAndBeautyBusiness",
-          "name": "AnamCara Wellness",
-          "url": "https://anamcara-wellness.es/",
-          "logo": "https://anamcara-wellness.es/assets/images/logo.png"
-        },
-        "mainEntity": [
-          {
-            "@type": "Person",
-            "name": "Noelia Montoto",
-            "alternateName": "Momo",
-            "jobTitle": "Masajista Profesional y Terapeuta Manual",
-            "description": "Especializada en terapias manuales y fisioestética con Máster en Mindfulness y Gestión Emocional. Más de 7 años de experiencia.",
-            "worksFor": {
-              "@type": "HealthAndBeautyBusiness",
-              "name": "AnamCara Wellness",
-              "url": "https://anamcara-wellness.es/"
-            }
-          },
-          {
-            "@type": "Person",
-            "name": "Iago Bernárdez",
-            "jobTitle": "Masajista Profesional y Terapeuta Spa",
-            "description": "Especializado en terapias manuales, masajes experienciales y Máster en Gestión de Centros Wellness y Spa. Más de 8 años de experiencia.",
-            "worksFor": {
-              "@type": "HealthAndBeautyBusiness",
-              "name": "AnamCara Wellness",
-              "url": "https://anamcara-wellness.es/"
-            }
-          }
-        ]
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: max(60px, env(safe-area-inset-bottom, 24px));
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* h1 y h2 en BLANCO */
+    h1, h2, .section__title {
+      font-family: var(--font-heading);
+      color: #FFFFFF !important;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    h2, .section__title {
+      font-size: clamp(1.8rem, 3.6vw, 2.3rem);
+      margin-bottom: 24px;
+      position: relative;
+    }
+    h2::after, .section__title::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: var(--color-gold);
+      margin: 12px auto 0 auto;
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--color-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--color-gold);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: var(--color-gold-light);
+    }
+
+    /* Header Adaptativo */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(24, 24, 24, 0.88);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(196, 142, 69, 0.25);
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(18, 18, 18, 0.96);
+      border-bottom-color: rgba(196, 142, 69, 0.4);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      transition: padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .header.scrolled .header__inner {
+      padding: 8px 0;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      max-width: 220px;
+    }
+
+    .logo__img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      max-height: 48px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+      transition: max-width 0.3s ease, max-height 0.3s ease;
+    }
+
+    .header.scrolled .logo__img {
+      max-width: 140px;
+      max-height: 38px;
+    }
+
+    .logo__text {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      transition: font-size 0.3s ease;
+    }
+
+    .header.scrolled .logo__text {
+      font-size: 1.15rem;
+    }
+
+    .logo__text span {
+      color: var(--color-gold);
+    }
+
+    .nav__toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav__bar {
+      height: 2px;
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: 2px;
+    }
+
+    .nav__list {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 24px;
+    }
+    .nav__link {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #E0E0E0;
+      letter-spacing: 0.02em;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .nav__link:hover {
+      color: var(--color-gold);
+      background: rgba(196, 142, 69, 0.08);
+    }
+    .nav__link.is-active {
+      color: var(--color-gold);
+      font-weight: 600;
+      border: 1px solid rgba(196, 142, 69, 0.4);
+      background: rgba(196, 142, 69, 0.1);
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 13px 26px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn--gold {
+      background-color: var(--color-gold);
+      color: #141414 !important;
+    }
+    .btn--gold:hover {
+      background-color: var(--color-gold-light);
+      color: #141414 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+    .section--hero-subpage {
+      padding: 64px 0 32px 0;
+      text-align: center;
+    }
+
+    .grid--team {
+      display: grid;
+      gap: 32px;
+      margin-top: 36px;
+    }
+    @media (min-width: 820px) {
+      .grid--team {
+        grid-template-columns: 1fr 1fr;
       }
-    </script>
-  </head>
-  <body>
-    <header class="header" id="top">
-      <div class="container header__inner">
-        <a href="{{ site.baseurl }}/index.html" class="logo" aria-label="AnamCara - Inicio">
-          <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logotipo AnamCara" class="logo__img" width="180" height="50" fetchpriority="high" />
-        </a>
-        <nav class="nav" aria-label="Navegación principal">
-          <button class="nav__toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menú">
-            <span class="nav__bar"></span>
-            <span class="nav__bar"></span>
-            <span class="nav__bar"></span>
-          </button>
-          <ul id="primary-menu" class="nav__list">
-            <li><a href="{{ site.baseurl }}/index.html#servicios" class="nav__link">Servicios</a></li>
-            <li><a href="{{ site.baseurl }}/index.html#reserva" class="nav__link">Reserva</a></li>
-            <li><a href="{{ site.baseurl }}/index.html#contacto" class="nav__link">Contacto</a></li>
-            <li><a href="{{ site.baseurl }}/conocenos.html" class="nav__link">Conócenos</a></li>
-            <li><a href="{{ site.baseurl }}/faq.html" class="nav__link">FAQ</a></li>
-          </ul>
-        </nav>
+    }
+
+    .card {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      box-shadow: var(--shadow);
+    }
+    .card--full {
+      max-width: 920px;
+      margin: 40px auto 0 auto;
+    }
+    .card__role {
+      font-size: 0.88rem;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* Footer Oficial */
+    .footer {
+      background-color: #121212;
+      border-top: 1px solid rgba(196, 142, 69, 0.2);
+      padding: 36px 0;
+      margin-top: 60px;
+    }
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .link--muted {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #A0A0A0;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+    .link--muted:hover {
+      color: var(--color-gold);
+    }
+    .footer__icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav__toggle {
+        display: flex;
+      }
+      .nav__list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1c1c1c;
+        border-bottom: 1px solid var(--color-border);
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 16px;
+      }
+      .nav__list.is-open {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Adaptativo -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="{{ site.baseurl }}/" class="logo" aria-label="AnamCara - Inicio">
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logotipo AnamCara" class="logo__img" width="180" height="50" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block';" />
+        <span class="logo__text" style="display:none;">Anam<span>Cara</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menú">
+          <span class="nav__bar"></span>
+          <span class="nav__bar"></span>
+          <span class="nav__bar"></span>
+        </button>
+        <ul id="primary-menu" class="nav__list">
+          <li><a href="{{ site.baseurl }}/#masajes" class="nav__link">Servicios</a></li>
+          <li><a href="{{ site.baseurl }}/#reserva" class="nav__link">Reserva</a></li>
+          <li><a href="{{ site.baseurl }}/tarjetas-regalo.html" class="nav__link">Tarjetas Regalo</a></li>
+          <li><a href="{{ site.baseurl }}/#contacto" class="nav__link">Contacto</a></li>
+          <li><a href="{{ site.baseurl }}/conocenos.html" class="nav__link is-active">Conócenos</a></li>
+          <li><a href="{{ site.baseurl }}/faq.html" class="nav__link">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--hero-subpage">
+      <div class="container">
+        <h1>Conoce al equipo AnamCara</h1>
+        <p style="max-width: 680px; margin: 0 auto; color: #D6D6D6;">
+          Somos profesionales apasionados por el bienestar, la salud muscular y el cuidado consciente en A Coruña y O Temple.
+        </p>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section id="conocenos" class="section" aria-labelledby="conocenos-title">
-        <div class="container">
-          <h2 id="conocenos-title" class="section__title">Conócenos</h2>
-          <p class="section__intro">Somos dos profesionales apasionados por el bienestar y la belleza, dedicados a ofrecerte la mejor experiencia.</p>
-          
-          <div class="grid grid--split" style="margin-top: 48px;">
-            <!-- Profesional 1 -->
-            <article class="card">
-              <h3 class="card__title">Noelia Montoto</h3>
-              <p class="card__text">
-                Mi nombre es Noelia Montoto, aunque mucha gente me conoce como Momo.<br><br>
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <h2 class="section__title">Nuestros Terapeutas</h2>
+        <div class="grid--team">
+          <!-- Noelia Montoto -->
+          <article class="card">
+            <span class="card__role">Terapeuta Manual & Fisioestética</span>
+            <h3>Noelia Montoto (Momo)</h3>
+            <p>
+              Masajista profesional especializada en terapias manuales y fisioestética, con Máster en Mindfulness y Gestión Emocional.<br><br>
+              Con más de 7 años de experiencia en centros de masaje y bienestar, acompaña desde patologías y tensiones físicas hasta cambios estéticos y experiencias inmersivas de desconexión.<br><br>
+              Sus sesiones combinan técnicas osteomusculares con herramientas de calma y trabajo consciente, generando un espacio seguro donde mente y cuerpo vuelven a su eje natural.
+            </p>
+          </article>
 
-                Soy masajista profesional, especializada en terapias manuales y fisioestética, con un Master en Mindfulness y Gestión Emocional.<br><br>
-
-                Llevo a mis espaldas más de 7 años de experiencia en centros de masaje, wellness y entrenamiento personal, acompañando desde patologías y dolor físico o emocional, a cambios estéticos o experiencias inmersivas de relajación y desconexión.<br><br>
-
-                Mis sesiones buscan combinar el cuerpo y la mente mediante técnicas osteomusculares, herramientas de autoconocimiento, trabajo emocional y ambientes personalizados, para que cada persona obtenga el resultado que está buscando, sea de la rama que sea.<br><br>
-
-                Me gusta generar una simbiosis honesta y clara de todo lo que podemos lograr en conjunto, desde el respeto, la escucha activa, las sinergias y la profesionalidad en constante crecimiento, abarcando y abrazando perfiles más técnicos o mas espirituales, brindando siempre lo mejor de mi en cada momento.<br><br>
-
-                He encontrado en esta profesión, la fusión de mis dos pasiones: la mente y el cuerpo. Poder aunar el bienestar de ambos en mis sesiones es la mejor motivación.
-              </p>
-            </article>
-
-            <!-- Profesional 2 -->
-            <article class="card">
-              <h3 class="card__title">Iago Bernardez</h3>
-              <p class="card__text">
-                Mi nombre es Iago Bernárdez, soy masajista profesional especializado en terapias manuales y masajes experienciales, con un master en Gestión de centros Wellness y Spa.<br><br>
-
-                Cuento con más de 8 años de experiencia en centros wellness y spa de alto nivel, donde he acompañado a cada persona desde una atención personalizada, consciente y adaptada a sus necesidades reales.<br><br>
-
-                Trabajo combinando técnicas relajantes, descontracturantes, osteopáticas y energéticas, con el objetivo no solo de aliviar tensiones físicas, sino de crear una experiencia de bienestar profunda y única.<br><br>
-
-                Mi enfoque se basa en la escucha, la empatía y el respeto por cada cuerpo, adaptando cada sesión a la persona y al momento vital en el que se encuentra.<br><br>
-
-                Trato con perfiles muy diversos, abarcando desde personas que buscan relajación y desconexión, personas que necesitan una atención más personalizada, hasta deportistas o personas con necesidades específicas.<br><br>
-
-                Para mí, el masaje es una herramienta de cuidado integral, donde técnica y sensibilidad van siempre de la mano.
-              </p>
-            </article>
-          </div>
-           <!-- Sección Empresa -->
-           <article class="card" style="margin-top: 48px;">
-             <h3 class="card__title">Anam Cara Wellness</h3>
-             <p class="card__text">
-              El concepto de Anam Cara es un concepto de origen celta que significa "alma amiga": esa presencia que acompaña, sostiene y escucha sin juicio.<br><br>
-
-              AnamCara Wellness se nutre de ello y se articula en todos esos pequeños detalles que marcan la diferencia. Se plantea como un espacio seguro e inclusivo, ofreciendo un servicio personalizado, con confianza, mucha escucha y sobre todo respetuoso, para que todos vosotros os sintáis como en casa.<br><br>
-
-              En nuestro trabajo como terapeutas, AnamCara representa ese espacio seguro en el que el cuerpo puede soltar, expresarse y reequilibrarse. Cada sesión se convierte en un diálogo silencioso, en el que la atención profunda, la empatía y el respeto guían cada maniobra.<br><br>
-
-              Esa misma esencia se traslada al encuentro entre nuestras manos y el cuerpo, uniendo la técnica terapéutica a la sensibilidad y a la presencia consciente.<br><br>
-
-              No se trata solo de aliviar tensiones físicas, sino de acompañar procesos, emociones y momentos vitales a través de cada tratamiento. Nuestros masajes son cuidado integral, una experiencia personalizada donde el cuerpo habla, el ritmo se adapta y las manos actúan como puente entre el bienestar físico, la calma mental y equilibrio emocional.
-              </p>
-           </article>
+          <!-- Iago Bernárdez -->
+          <article class="card">
+            <span class="card__role">Terapeuta Manual & Spa</span>
+            <h3>Iago Bernárdez</h3>
+            <p>
+              Masajista profesional especializado en terapias manuales y masajes experienciales, con Máster en Gestión de Centros Wellness y Spa.<br><br>
+              Cuenta con más de 8 años de trayectoria en centros wellness y spa de alto nivel, adaptando cada sesión a las necesidades reales de cada persona.<br><br>
+              Trabaja integrando técnicas descontracturantes, relajantes, osteopáticas y energéticas, enfocadas en aliviar tensiones profundas con sensibilidad y escucha empática.
+            </p>
+          </article>
         </div>
-      </section>
 
-      <!-- Reseñas de Google Business -->
-      <section id="google-reviews" class="section" aria-labelledby="reviews-title">
-        <div class="container">
-          <h2 id="reviews-title" class="section__title">Opiniones de nuestros clientes</h2>
-          <p class="section__intro">Descubre lo que dicen nuestros clientes sobre su experiencia con AnamCara.</p>
-
-          <!-- Google Reviews Widget -->
-          <div class="google-reviews-container" style="margin: 40px 0; display: flex; justify-content: center;">
-            <!-- Widget de reseñas de Google -->
-            <div id="google-reviews-widget" style="width: 100%; max-width: 600px; min-height: 350px; display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 32px; border: 1px solid rgba(199, 160, 99, 0.25); border-radius: 10px; background: rgba(255, 255, 255, 0.02); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
-              <h3 style="color: var(--color-gold); margin-bottom: 16px; text-align: center;">Reseñas de Google</h3>
-              <p style="color: var(--color-muted); text-align: center; margin-bottom: 24px;">
-                Descubre las opiniones reales de nuestros clientes en Google Maps. Haz clic en el botón para ver todas las reseñas y experiencias compartidas por quienes han visitado AnamCara Wellness.
-              </p>
-              <a href="https://maps.app.goo.gl/Y8KKRNfKK2yjcrpX6" target="_blank" rel="noopener noreferrer" class="btn btn--gold" style="padding: 16px 32px; font-size: 16px;">
-                Ver reseñas en Google Maps
-              </a>
-              <p style="color: var(--color-muted); font-size: 12px; margin-top: 16px; text-align: center;">
-                ⭐⭐⭐⭐⭐
-              </p>
-            </div>
+        <!-- Concepto Anam Cara -->
+        <article class="card card--full">
+          <span class="card__role">Nuestra Esencia</span>
+          <h3>El Significado de Anam Cara</h3>
+          <p>
+            El concepto de Anam Cara proviene de la tradición celta y significa <em>«alma amiga»</em>: esa presencia que acompaña, sostiene y acoge sin juicio.<br><br>
+            En nuestros centros de A Coruña (Avenida de Oza) y O Temple (Rúa Tapia), AnamCara representa un espacio seguro en el que el cuerpo puede soltar, expresarse y reequilibrarse.<br><br>
+            Cada sesión se concibe como un diálogo respetuoso donde la técnica y la sensibilidad actúan como puente hacia la serenidad integral.
+          </p>
+          <div style="text-align: center; margin-top: 28px;">
+            <a href="{{ site.baseurl }}/#reserva" class="btn btn--gold">Reserva tu cita con nosotros</a>
           </div>
-        </div>
-      </section>
-
-      <!-- Redes Sociales -->
-      <section id="redes-sociales" class="section" aria-labelledby="redes-title">
-        <div class="container">
-          <h2 id="redes-title" class="section__title">Síguenos en nuestras redes</h2>
-          <p class="section__intro">Descubre nuestro día a día y los últimos tratamientos en nuestras redes sociales.</p>
-          
-          <!-- Enlaces directos a redes sociales -->
-          <div style="text-align: center; margin: 32px 0 40px;">
-            <a href="https://www.instagram.com/anamcara.wellness/" target="_blank" rel="noopener noreferrer" class="btn btn--gold" style="display: inline-block; margin: 0 12px 16px;">
-              Instagram @anamcara.wellness
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61586145147664" target="_blank" rel="noopener noreferrer" class="btn btn--gold" style="display: inline-block; margin: 0 12px 16px;">
-              Facebook Anam Cara
-            </a>
-          </div>
-
-          <!-- Feeds / Tarjetas de Redes Sociales -->
-          <div class="social-feeds-wrapper">
-            <!-- Feed de Instagram: Opción A Nativa e Interactiva -->
-            <div class="social-feed">
-              <h3 class="section__subtitle" style="margin-bottom: 24px;">Instagram @anamcara.wellness</h3>
-              <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 32px; height: 100%; border: 1px solid rgba(199, 160, 99, 0.35); background: rgba(255, 255, 255, 0.03); border-radius: var(--radius); text-align: center;">
-                <div>
-                  <div style="width: 72px; height: 72px; margin: 0 auto 20px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                  </div>
-                  <h4 style="color: var(--color-gold); font-size: 20px; margin-bottom: 8px;">@anamcara.wellness</h4>
-                  <p style="color: var(--color-muted); font-size: 14px; margin-bottom: 20px; line-height: 1.6;">
-                    Sigue nuestro día a día, consejos de autocuidado, técnicas de maderoterapia, masajes relajantes y promociones exclusivas en A Coruña.
-                  </p>
-                  <ul style="list-style: none; padding: 0; margin: 0 0 24px; color: var(--color-text); font-size: 14px; text-align: left; display: inline-block;">
-                    <li style="margin-bottom: 8px;">✨ Maderoterapia y modelado corporal</li>
-                    <li style="margin-bottom: 8px;">🌿 Drenaje Linfático Manual y Presoterapia</li>
-                    <li style="margin-bottom: 8px;">💆 Masajes relajantes y cuidados faciales</li>
-                  </ul>
-                </div>
-                <div>
-                  <a href="https://www.instagram.com/anamcara.wellness/" target="_blank" rel="noopener noreferrer" class="btn btn--gold" style="display: block; width: 100%; max-width: 280px; margin: 0 auto; padding: 14px 20px;">
-                    Ver publicaciones en Instagram
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Feed de Facebook -->
-            <div class="social-feed">
-              <h3 class="section__subtitle" style="margin-bottom: 24px;">Facebook Anam Cara</h3>
-              <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 32px; height: 100%; border: 1px solid rgba(199, 160, 99, 0.35); background: rgba(255, 255, 255, 0.03); border-radius: var(--radius); text-align: center;">
-                <div>
-                  <div style="width: 72px; height: 72px; margin: 0 auto 20px; border-radius: 50%; background: #1877f2; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                  </div>
-                  <h4 style="color: var(--color-gold); font-size: 20px; margin-bottom: 8px;">Anam Cara Wellness</h4>
-                  <p style="color: var(--color-muted); font-size: 14px; margin-bottom: 20px; line-height: 1.6;">
-                    Únete a nuestra comunidad en Facebook para consultar eventos, novedades, artículos y valoraciones sobre bienestar y salud.
-                  </p>
-                  <ul style="list-style: none; padding: 0; margin: 0 0 24px; color: var(--color-text); font-size: 14px; text-align: left; display: inline-block;">
-                    <li style="margin-bottom: 8px;">📍 Novedades de nuestro centro en A Coruña</li>
-                    <li style="margin-bottom: 8px;">💬 Atención personalizada y contacto directo</li>
-                    <li style="margin-bottom: 8px;">⭐ Opiniones y experiencias de clientes</li>
-                  </ul>
-                </div>
-                <div>
-                  <a href="https://www.facebook.com/profile.php?id=61586145147664" target="_blank" rel="noopener noreferrer" class="btn btn--gold" style="display: block; width: 100%; max-width: 280px; margin: 0 auto; padding: 14px 20px;">
-                    Visitar página de Facebook
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer__inner">
-        <!--<p>© <span id="year"></span> AnămCara · A Coruña, Galicia</p>-->
-        <a href="{{ site.baseurl }}/index.html#top" class="link link--muted">Volver arriba</a>
-        <a href="https://wa.me/34622529042" target="_blank" rel="noopener noreferrer" class="link link--muted" aria-label="Contactar por WhatsApp Coruña">
-          <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="var(--color-gold)"/>
-          </svg>
-          <span class="footer__text">WhatsApp Coruña</span>
-        </a>
-        <a href="https://wa.me/34722708961" target="_blank" rel="noopener noreferrer" class="link link--muted" aria-label="WhatsApp O Temple">
-          <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="var(--color-gold)"/>
-          </svg>
-          <span class="footer__text">WhatsApp O Temple</span>
-        </a>
-        <a href="https://www.instagram.com/anamcara.wellness/" target="_blank" rel="noopener noreferrer" class="link link--muted" aria-label="Instagram">
-          <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="var(--color-gold)"/>
-          </svg>
-          <span class="footer__text">Instagram</span>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61586145147664" target="_blank" rel="noopener noreferrer" class="link link--muted" aria-label="Facebook">
-          <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="var(--color-gold)"/>
-          </svg>
-          <span class="footer__text">Facebook</span>
-        </a>
+        </article>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="{{ site.baseurl }}/assets/js/script.js"></script>
-  </body>
+  <!-- Footer Oficial con SVGs -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="link link--muted">Volver arriba</a>
+      <a href="https://wa.me/34622529042" target="_blank" rel="noopener noreferrer nofollow" class="link link--muted" aria-label="Contactar por WhatsApp Coruña">
+        <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="var(--color-gold)"/>
+        </svg>
+        <span class="footer__text">WhatsApp Coruña</span>
+      </a>
+      <a href="https://wa.me/34722708961" target="_blank" rel="noopener noreferrer nofollow" class="link link--muted" aria-label="Contactar por WhatsApp O Temple">
+        <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="var(--color-gold)"/>
+        </svg>
+        <span class="footer__text">WhatsApp O Temple</span>
+      </a>
+      <a href="https://www.instagram.com/anamcara.wellness/" target="_blank" rel="noopener noreferrer nofollow" class="link link--muted" aria-label="Síguenos en Instagram">
+        <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="var(--color-gold)"/>
+        </svg>
+        <span class="footer__text">Instagram</span>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61586145147664" target="_blank" rel="noopener noreferrer nofollow" class="link link--muted" aria-label="Síguenos en Facebook">
+        <svg class="footer__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="var(--color-gold)"/>
+        </svg>
+        <span class="footer__text">Facebook</span>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Header Adaptativo con scroll e histéresis
+    (function initAdaptiveHeader() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+
+      let ticking = false;
+
+      function updateHeader() {
+        const scrollY = window.scrollY;
+        if (scrollY > 100) {
+          header.classList.add('scrolled');
+        } else if (scrollY < 50) {
+          header.classList.remove('scrolled');
+        }
+        ticking = false;
+      }
+
+      updateHeader();
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('primary-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+</body>
 </html>
