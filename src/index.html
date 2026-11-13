@@ -183,8 +183,10 @@
       align-items: center;
       color: var(--color-text);
       text-decoration: none;
-      width: 100%;
+      width: auto;
       max-width: 250px;
+      flex-shrink: 0;
+      transition: max-width 0.3s ease;
     }
 
     .logo__img {
@@ -195,6 +197,7 @@
       transition: max-width 0.3s ease;
     }
 
+    .header.scrolled .logo,
     .header.scrolled .logo__img {
       max-width: 150px;
     }
@@ -215,6 +218,12 @@
 
     .logo__text span {
       color: var(--color-gold);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      position: relative;
     }
 
     .nav__toggle {
@@ -240,27 +249,42 @@
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 24px;
+      margin: 0;
+      padding: 0;
+      gap: 16px;
     }
 
     .nav__link {
+      font-family: var(--font-body);
       font-size: 0.92rem;
       font-weight: 500;
       color: #E0E0E0;
       letter-spacing: 0.02em;
       padding: 8px 12px;
       border-radius: 6px;
-      transition: color 0.2s ease, background 0.2s ease;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1.2;
+      white-space: nowrap;
     }
     .nav__link:hover {
       color: var(--color-gold);
       background: rgba(196, 142, 69, 0.08);
     }
+    .nav__link.is-active {
+      color: var(--color-gold);
+      font-weight: 600;
+      border-color: rgba(196, 142, 69, 0.4);
+      background: rgba(196, 142, 69, 0.12);
+    }
     .nav__link--highlight {
       color: var(--color-gold);
       font-weight: 600;
-      border: 1px solid rgba(196, 142, 69, 0.4);
-      background: rgba(196, 142, 69, 0.1);
+      border-color: rgba(196, 142, 69, 0.4);
+      background: rgba(196, 142, 69, 0.12);
     }
     .nav__link--highlight:hover {
       background: var(--color-gold);
@@ -745,7 +769,10 @@
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
+      .container {
+        padding: 0 16px;
+      }
       .header__inner {
         padding: 10px 0;
       }
@@ -755,6 +782,7 @@
       .logo {
         max-width: 200px;
       }
+      .header.scrolled .logo,
       .header.scrolled .logo__img {
         max-width: 150px;
       }
@@ -770,12 +798,25 @@
         background: #1c1c1c;
         border-bottom: 1px solid var(--color-border);
         flex-direction: column;
-        padding: 20px 24px;
-        gap: 16px;
+        padding: 18px 24px;
+        gap: 10px;
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
       }
       .nav__list.is-open {
         display: flex;
       }
+      .nav__list li {
+        width: 100%;
+      }
+      .nav__link {
+        display: block;
+        width: 100%;
+        padding: 10px 14px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
       /* Botones optimizados y elegantes en móvil */
       .btn {
         padding: 11px 18px;
@@ -847,7 +888,7 @@
   <header class="header" id="top">
     <div class="container header__inner">
       <a href="{{ site.baseurl }}/" class="logo" aria-label="AnamCara - Inicio">
-        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logotipo AnamCara" class="logo__img" width="180" height="50" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block';" />
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logotipo AnamCara" class="logo__img" width="220" height="110" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block';" />
         <span class="logo__text" style="display:none;">Anam<span>Cara</span></span>
       </a>
 
