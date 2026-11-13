@@ -42,3 +42,4 @@ mockup-*.html
 .impeccable/
 tools/
 src/assets/images/template_base64.txt
+tests/screenshots/

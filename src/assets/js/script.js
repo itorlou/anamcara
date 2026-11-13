@@ -67,6 +67,11 @@
   function setExpanded(expanded) {
     toggle.setAttribute('aria-expanded', String(expanded));
     menu.setAttribute('aria-expanded', String(expanded));
+    if (expanded) {
+      menu.classList.add('is-open');
+    } else {
+      menu.classList.remove('is-open');
+    }
   }
 
   toggle.addEventListener('click', () => {
