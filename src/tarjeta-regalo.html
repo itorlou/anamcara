@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Tarjetas Regalo Oficiales | AnamCara Wellness A Coruña</title>
-  <meta name="description" content="Regala bienestar y desconexión con las Tarjetas Regalo oficiales de AnamCara Wellness en A Coruña (Avenida de Oza) y O Temple (Rúa Tapia)." />
+  <meta name="description" content="Regala bienestar y desconexión con las Tarjetas Regalo oficiales de AnamCara Wellness en A Coruña (Avenida de Oza), O Temple (Rúa Tapia) y Ferrol (Moma)." />
   <link rel="canonical" href="https://anamcara-wellness.es/tarjetas-regalo.html" />
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/images/favicon.png" sizes="any" />
   <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" />
@@ -811,7 +811,7 @@
       <div class="gift-page__header">
         <h1>Tarjetas Regalo AnamCara</h1>
         <p style="max-width: 680px; margin: 0 auto; color: #D6D6D6;">
-          Regala o personaliza una experiencia de bienestar única en nuestros centros de A Coruña y O Temple.
+          Regala o personaliza una experiencia de bienestar única en nuestros centros de A Coruña, O Temple y Ferrol (Moma).
         </p>
       </div>
 
@@ -833,6 +833,7 @@
               <select id="gift-center" class="form-control">
                 <option value="coruna">A Coruña (Avenida de Oza)</option>
                 <option value="temple">O Temple (Rúa Tapia)</option>
+                <option value="ferrol">Ferrol (Moma)</option>
               </select>
             </div>
 
@@ -1180,9 +1181,16 @@
 
   // Envío a WhatsApp con detalles para tramitar el pago y recibir el código
   function sendWhatsAppOrder() {
-    const isTemple = (giftState.center === 'temple');
-    const phone = isTemple ? '34722708961' : '34622529042';
-    const centerName = isTemple ? 'O Temple (Rúa Tapia)' : 'A Coruña (Avenida de Oza)';
+    let phone = '34622529042';
+    let centerName = 'A Coruña (Avenida de Oza)';
+
+    if (giftState.center === 'temple') {
+      phone = '34722708961';
+      centerName = 'O Temple (Rúa Tapia)';
+    } else if (giftState.center === 'ferrol') {
+      phone = '34622529042';
+      centerName = 'Ferrol (Moma)';
+    }
 
     const buyer = giftState.buyerName || 'Un cliente';
     const recipient = giftState.recipientName || 'Una persona especial';
